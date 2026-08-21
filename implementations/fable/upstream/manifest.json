@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 1,
+  "upstreamRepository": "https://github.com/modelcontextprotocol/ext-apps",
+  "upstreamCommit": "10195ad91851502134930e9b80ec2c04e277a720",
+  "upstreamPackageVersion": "1.7.5",
+  "licenseNote": "Upstream LICENSE at the pinned commit (MIT-to-Apache-2.0 transition statement, Apache-2.0 text, and MIT text) is preserved verbatim at upstream/ext-apps/LICENSE; each copied example's package.json declares MIT. See THIRD_PARTY_NOTICES.md.",
+  "exclusions": [
+    {
+      "upstreamPath": "examples/*/main.ts",
+      "reason": "Standalone Express port listener with broad development CORS middleware; the gallery's Hono gateway owns routing and the public-runtime envelope, and the plan excludes standalone listeners from the production path."
+    },
+    {
+      "upstreamPath": "examples/*/.gitignore",
+      "reason": "Repository housekeeping file, not source."
+    },
+    {
+      "upstreamPath": "examples/basic-host/serve.ts",
+      "reason": "Unused dev-only Express server reference; the browser-test harness reimplements it as tests/browser/harness-server.mjs (in-memory serving, no per-request filesystem access). Removed after CodeQL flagged its unbounded per-request file serving (js/missing-rate-limiting); the gallery never executes it."
+    }
+  ],
+  "devOnly": [
+    {
+      "path": "upstream/ext-apps/basic-host",
+      "reason": "Upstream basic host, used exclusively as the local browser-test harness (contract/browser proof). Never deployed and never part of the Vercel function or CDN output."
+    }
+  ],
+  "files": [
+    {
+      "path": "upstream/ext-apps/LICENSE",
+      "upstreamPath": "LICENSE",
+      "originalSha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a",
+      "currentSha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/README.md",
+      "upstreamPath": "examples/basic-host/README.md",
+      "originalSha256": "22d0215c6758755c523da989a28014b3165a3ba8890324e0b3b9c179d972b712",
+      "currentSha256": "22d0215c6758755c523da989a28014b3165a3ba8890324e0b3b9c179d972b712",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/index.html",
+      "upstreamPath": "examples/basic-host/index.html",
+      "originalSha256": "faee06cd429c0c174377ced31ffc8aa588846d74febd9cbe553cd8094ae6b686",
+      "currentSha256": "faee06cd429c0c174377ced31ffc8aa588846d74febd9cbe553cd8094ae6b686",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/package.json",
+      "upstreamPath": "examples/basic-host/package.json",
+      "originalSha256": "09eb116e1a3527c24abc336fc78b156edbaa7e3401e25b1766495d916de45059",
+      "currentSha256": "09eb116e1a3527c24abc336fc78b156edbaa7e3401e25b1766495d916de45059",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/sandbox.html",
+      "upstreamPath": "examples/basic-host/sandbox.html",
+      "originalSha256": "97c0b4a0e9097d5a01d5d1c63b48f27bd6f8e636ddc5bd5052cc7e1a934ea87a",
+      "currentSha256": "97c0b4a0e9097d5a01d5d1c63b48f27bd6f8e636ddc5bd5052cc7e1a934ea87a",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/src/global.css",
+      "upstreamPath": "examples/basic-host/src/global.css",
+      "originalSha256": "35a5bb58d27b12e1ac8538bf73d10c85f6fb6083151d2192ebd02d90c973d1bc",
+      "currentSha256": "35a5bb58d27b12e1ac8538bf73d10c85f6fb6083151d2192ebd02d90c973d1bc",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/src/host-styles.ts",
+      "upstreamPath": "examples/basic-host/src/host-styles.ts",
+      "originalSha256": "0947b9c66c05daa6b02f5ac1586ca46cd08c568c98b39b5ba889af8c58724ab8",
+      "currentSha256": "0947b9c66c05daa6b02f5ac1586ca46cd08c568c98b39b5ba889af8c58724ab8",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/src/implementation.ts",
+      "upstreamPath": "examples/basic-host/src/implementation.ts",
+      "originalSha256": "3742a1bfff9914cf6c74ed902519bbfd9b9cd53a3302f29336e48d76d500babc",
+      "currentSha256": "3742a1bfff9914cf6c74ed902519bbfd9b9cd53a3302f29336e48d76d500babc",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/src/index.module.css",
+      "upstreamPath": "examples/basic-host/src/index.module.css",
+      "originalSha256": "761d58cc11e098c7a2ee170beb60eda45209c370c7dfa8557b8ed8f51c4e0c1e",
+      "currentSha256": "761d58cc11e098c7a2ee170beb60eda45209c370c7dfa8557b8ed8f51c4e0c1e",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/src/index.tsx",
+      "upstreamPath": "examples/basic-host/src/index.tsx",
+      "originalSha256": "ac0332bffe08b6612e9e202c5486912a731a1148e762afdd1d91a94124782d8e",
+      "currentSha256": "ac0332bffe08b6612e9e202c5486912a731a1148e762afdd1d91a94124782d8e",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/src/sandbox.ts",
+      "upstreamPath": "examples/basic-host/src/sandbox.ts",
+      "originalSha256": "41badf3e939ff62e952d30ebe3a5731d7f8c54f2f6021f47ef759ea857d0d88a",
+      "currentSha256": "41badf3e939ff62e952d30ebe3a5731d7f8c54f2f6021f47ef759ea857d0d88a",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/src/theme.ts",
+      "upstreamPath": "examples/basic-host/src/theme.ts",
+      "originalSha256": "1cef99e72e5f4cc2631d847a2e4228b8399a5ecaa03083d01080b112bdb3114a",
+      "currentSha256": "1cef99e72e5f4cc2631d847a2e4228b8399a5ecaa03083d01080b112bdb3114a",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/src/vite-env.d.ts",
+      "upstreamPath": "examples/basic-host/src/vite-env.d.ts",
+      "originalSha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "currentSha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/tsconfig.json",
+      "upstreamPath": "examples/basic-host/tsconfig.json",
+      "originalSha256": "dd5035abd8f4701071ed3ce3257b66d87c3b47d43b352e6e626a68ed4e544e8a",
+      "currentSha256": "dd5035abd8f4701071ed3ce3257b66d87c3b47d43b352e6e626a68ed4e544e8a",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-host/vite.config.ts",
+      "upstreamPath": "examples/basic-host/vite.config.ts",
+      "originalSha256": "a11bf5148a34f4c42e90b63b8809a98fe605c998e81d5f59f8ab590984da5ea1",
+      "currentSha256": "a11bf5148a34f4c42e90b63b8809a98fe605c998e81d5f59f8ab590984da5ea1",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/README.md",
+      "upstreamPath": "examples/basic-server-react/README.md",
+      "originalSha256": "d8db9d53d283744289fa2313029e6c2b66644f22716f4c7ba719b0ac11819638",
+      "currentSha256": "d8db9d53d283744289fa2313029e6c2b66644f22716f4c7ba719b0ac11819638",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/grid-cell.png",
+      "upstreamPath": "examples/basic-server-react/grid-cell.png",
+      "originalSha256": "4f59f5b7067ce30bef3592ab992a4ba02c0c8a1ff34c6481611a20fcbccc1dde",
+      "currentSha256": "4f59f5b7067ce30bef3592ab992a4ba02c0c8a1ff34c6481611a20fcbccc1dde",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/mcp-app.html",
+      "upstreamPath": "examples/basic-server-react/mcp-app.html",
+      "originalSha256": "586e099d92ede8a0382784b9e2473b8a24336c5b028a7b3a7691bdc5aa3b5df7",
+      "currentSha256": "586e099d92ede8a0382784b9e2473b8a24336c5b028a7b3a7691bdc5aa3b5df7",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/package.json",
+      "upstreamPath": "examples/basic-server-react/package.json",
+      "originalSha256": "72ee92186ba2d4a3b2084395aa7aa9bf230f523a53875b3ff71f686ce819b5fd",
+      "currentSha256": "72ee92186ba2d4a3b2084395aa7aa9bf230f523a53875b3ff71f686ce819b5fd",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/screenshot.png",
+      "upstreamPath": "examples/basic-server-react/screenshot.png",
+      "originalSha256": "d0b800cf1eb7e4ad7de8bb4b10b367bf89ca0002f24ed717401a1f3e0a178ee4",
+      "currentSha256": "d0b800cf1eb7e4ad7de8bb4b10b367bf89ca0002f24ed717401a1f3e0a178ee4",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/server.ts",
+      "upstreamPath": "examples/basic-server-react/server.ts",
+      "originalSha256": "468bba2471e14832d6312630d39a805d3cc03fe905ea393f38f23e1d703ac2c3",
+      "currentSha256": "d73da85b7524f1bef41a9da52463ac3b3f0fe96276ddf0cb40da95f3e94a88a4",
+      "modified": true,
+      "modificationNote": "Adapted from MCP SDK v1 + @modelcontextprotocol/ext-apps/server to the gallery's SDK v2 registration adapter (src/mcp-app-adapter.ts): import paths changed, createServer() became registerApp(server) receiving the per-request SDK v2 server, and the dist/mcp-app.html filesystem read was replaced by the immutable bundled resource store. Tool names, descriptions, schemas, resource URIs, MIME profile, _meta.ui declarations, fallback content, and UI behavior are unchanged."
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/src/global.css",
+      "upstreamPath": "examples/basic-server-react/src/global.css",
+      "originalSha256": "ab90b272c58ebbc6582e70f9850a0fb48c83a034ea9d91341eeb8b9025cddd89",
+      "currentSha256": "ab90b272c58ebbc6582e70f9850a0fb48c83a034ea9d91341eeb8b9025cddd89",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/src/mcp-app.module.css",
+      "upstreamPath": "examples/basic-server-react/src/mcp-app.module.css",
+      "originalSha256": "89fd47acbdc78578a03d1377373f5f431594271881d116f4aaa443a1437dd736",
+      "currentSha256": "89fd47acbdc78578a03d1377373f5f431594271881d116f4aaa443a1437dd736",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/src/mcp-app.tsx",
+      "upstreamPath": "examples/basic-server-react/src/mcp-app.tsx",
+      "originalSha256": "fa3c831c659d21a0dbc9c74560b8a9ae37514fcc431efce4ccba294e7f6d13a8",
+      "currentSha256": "fa3c831c659d21a0dbc9c74560b8a9ae37514fcc431efce4ccba294e7f6d13a8",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/src/vite-env.d.ts",
+      "upstreamPath": "examples/basic-server-react/src/vite-env.d.ts",
+      "originalSha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "currentSha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/tsconfig.json",
+      "upstreamPath": "examples/basic-server-react/tsconfig.json",
+      "originalSha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "currentSha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/tsconfig.server.json",
+      "upstreamPath": "examples/basic-server-react/tsconfig.server.json",
+      "originalSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "currentSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/basic-server-react/vite.config.ts",
+      "upstreamPath": "examples/basic-server-react/vite.config.ts",
+      "originalSha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "currentSha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/README.md",
+      "upstreamPath": "examples/budget-allocator-server/README.md",
+      "originalSha256": "398bd87d8f8d050bf730957228ce9eccbc7ad096d7712d766c156e69ca6d2f80",
+      "currentSha256": "398bd87d8f8d050bf730957228ce9eccbc7ad096d7712d766c156e69ca6d2f80",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/grid-cell.png",
+      "upstreamPath": "examples/budget-allocator-server/grid-cell.png",
+      "originalSha256": "81e9eb381dcbc75db66cd285b0a66548409867b50ffd6c7a0cfda211c7d5cbbc",
+      "currentSha256": "81e9eb381dcbc75db66cd285b0a66548409867b50ffd6c7a0cfda211c7d5cbbc",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/mcp-app.html",
+      "upstreamPath": "examples/budget-allocator-server/mcp-app.html",
+      "originalSha256": "26ac6e944d5d8611cd6d6b3d8d20ce3be907116b6c215fb4405e1365252a9f26",
+      "currentSha256": "26ac6e944d5d8611cd6d6b3d8d20ce3be907116b6c215fb4405e1365252a9f26",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/package.json",
+      "upstreamPath": "examples/budget-allocator-server/package.json",
+      "originalSha256": "b271f1022c3ed58d4f843fbbde634a89a509cf3f62c05b35890cdcdb866708cc",
+      "currentSha256": "b271f1022c3ed58d4f843fbbde634a89a509cf3f62c05b35890cdcdb866708cc",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/screenshot.png",
+      "upstreamPath": "examples/budget-allocator-server/screenshot.png",
+      "originalSha256": "42385d199c4b63ef0769bf30aaa62721b1f8be9e9a50127a3b50623755f927bc",
+      "currentSha256": "42385d199c4b63ef0769bf30aaa62721b1f8be9e9a50127a3b50623755f927bc",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/server.ts",
+      "upstreamPath": "examples/budget-allocator-server/server.ts",
+      "originalSha256": "384a6c6e915c2f8ec385c8b54ec4bce1e7d178e5bfc205d1b4e5c51f769914ff",
+      "currentSha256": "83b38624ecc5cdaaac43565447c74f6fb5cdb8eaaecb27feae2e72ca4b9648c9",
+      "modified": true,
+      "modificationNote": "Adapted from MCP SDK v1 + @modelcontextprotocol/ext-apps/server to the gallery's SDK v2 registration adapter (src/mcp-app-adapter.ts): import paths changed, createServer() became registerApp(server) receiving the per-request SDK v2 server, and the dist/mcp-app.html filesystem read was replaced by the immutable bundled resource store. Tool names, descriptions, schemas, resource URIs, MIME profile, _meta.ui declarations, fallback content, and UI behavior are unchanged."
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/src/global.css",
+      "upstreamPath": "examples/budget-allocator-server/src/global.css",
+      "originalSha256": "c50fdc4e3e9fad5863c26f40d2eae76d689c211dea3d2e7172a706983d1239f0",
+      "currentSha256": "c50fdc4e3e9fad5863c26f40d2eae76d689c211dea3d2e7172a706983d1239f0",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/src/mcp-app.css",
+      "upstreamPath": "examples/budget-allocator-server/src/mcp-app.css",
+      "originalSha256": "cf930312bf5970495d046e619f711bac07d46f0def1bb572ea97c0352fe1d1e2",
+      "currentSha256": "cf930312bf5970495d046e619f711bac07d46f0def1bb572ea97c0352fe1d1e2",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/src/mcp-app.ts",
+      "upstreamPath": "examples/budget-allocator-server/src/mcp-app.ts",
+      "originalSha256": "0cb98da846f103ac6addd45052707cbcab299b12db6ef36f9c00ba1863468764",
+      "currentSha256": "0cb98da846f103ac6addd45052707cbcab299b12db6ef36f9c00ba1863468764",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/tsconfig.json",
+      "upstreamPath": "examples/budget-allocator-server/tsconfig.json",
+      "originalSha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "currentSha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/tsconfig.server.json",
+      "upstreamPath": "examples/budget-allocator-server/tsconfig.server.json",
+      "originalSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "currentSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/budget-allocator-server/vite.config.ts",
+      "upstreamPath": "examples/budget-allocator-server/vite.config.ts",
+      "originalSha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "currentSha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/README.md",
+      "upstreamPath": "examples/cohort-heatmap-server/README.md",
+      "originalSha256": "6fbda9d555c143934414268edb2f57bbb364e05a88b870412e05df3b32634419",
+      "currentSha256": "6fbda9d555c143934414268edb2f57bbb364e05a88b870412e05df3b32634419",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/grid-cell.png",
+      "upstreamPath": "examples/cohort-heatmap-server/grid-cell.png",
+      "originalSha256": "f4ea35cbdf8c3bf0d506248d9c70a201230b7643f71905a9a2938195376acf3c",
+      "currentSha256": "f4ea35cbdf8c3bf0d506248d9c70a201230b7643f71905a9a2938195376acf3c",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/mcp-app.html",
+      "upstreamPath": "examples/cohort-heatmap-server/mcp-app.html",
+      "originalSha256": "6f0b5400c3813bcd0af7327a8775d727245aa32b57438bdaa48391dd37fa36e3",
+      "currentSha256": "6f0b5400c3813bcd0af7327a8775d727245aa32b57438bdaa48391dd37fa36e3",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/package.json",
+      "upstreamPath": "examples/cohort-heatmap-server/package.json",
+      "originalSha256": "b31a615117dda0c5b89524b9171728ff69e46a511b2bf6d50c574dfa5abcdc17",
+      "currentSha256": "b31a615117dda0c5b89524b9171728ff69e46a511b2bf6d50c574dfa5abcdc17",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/screenshot.png",
+      "upstreamPath": "examples/cohort-heatmap-server/screenshot.png",
+      "originalSha256": "f55cd4a1ec2d50b8250d93d9254dbdf87a3fc9a42487e8b8f872f5f02ca3cd8d",
+      "currentSha256": "f55cd4a1ec2d50b8250d93d9254dbdf87a3fc9a42487e8b8f872f5f02ca3cd8d",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/server.ts",
+      "upstreamPath": "examples/cohort-heatmap-server/server.ts",
+      "originalSha256": "34d7d9d2cfca3fb9863c454888690f077b50a79307176be81ce024b2d5b4b085",
+      "currentSha256": "7813625d43a7e088c8661f21a3d99d8284f362bf827574923d62a3a35fed94fa",
+      "modified": true,
+      "modificationNote": "Adapted from MCP SDK v1 + @modelcontextprotocol/ext-apps/server to the gallery's SDK v2 registration adapter (src/mcp-app-adapter.ts): import paths changed, createServer() became registerApp(server) receiving the per-request SDK v2 server, and the dist/mcp-app.html filesystem read was replaced by the immutable bundled resource store. Tool names, descriptions, schemas, resource URIs, MIME profile, _meta.ui declarations, fallback content, and UI behavior are unchanged."
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/src/global.css",
+      "upstreamPath": "examples/cohort-heatmap-server/src/global.css",
+      "originalSha256": "f2d510120108e6bdd961ec089c89f1bb87b72e1d5f1088654664b4e6d141ee4e",
+      "currentSha256": "f2d510120108e6bdd961ec089c89f1bb87b72e1d5f1088654664b4e6d141ee4e",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/src/mcp-app.module.css",
+      "upstreamPath": "examples/cohort-heatmap-server/src/mcp-app.module.css",
+      "originalSha256": "3ebb4ceda3b5f56e67ad03fa81eb2f88b75c1f1033e1dca96050679feb2b65c9",
+      "currentSha256": "3ebb4ceda3b5f56e67ad03fa81eb2f88b75c1f1033e1dca96050679feb2b65c9",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/src/mcp-app.tsx",
+      "upstreamPath": "examples/cohort-heatmap-server/src/mcp-app.tsx",
+      "originalSha256": "481afa3fa11f774476cec1399545773b15be17f4517d1aba13e5c822141117c3",
+      "currentSha256": "481afa3fa11f774476cec1399545773b15be17f4517d1aba13e5c822141117c3",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/src/vite-env.d.ts",
+      "upstreamPath": "examples/cohort-heatmap-server/src/vite-env.d.ts",
+      "originalSha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "currentSha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/tsconfig.json",
+      "upstreamPath": "examples/cohort-heatmap-server/tsconfig.json",
+      "originalSha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "currentSha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/tsconfig.server.json",
+      "upstreamPath": "examples/cohort-heatmap-server/tsconfig.server.json",
+      "originalSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "currentSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/cohort-heatmap-server/vite.config.ts",
+      "upstreamPath": "examples/cohort-heatmap-server/vite.config.ts",
+      "originalSha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "currentSha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/README.md",
+      "upstreamPath": "examples/customer-segmentation-server/README.md",
+      "originalSha256": "cc5ae3a4aa8d3404c72fefca4fb66de45bd40d950859ec1fbafe9719231c99d8",
+      "currentSha256": "cc5ae3a4aa8d3404c72fefca4fb66de45bd40d950859ec1fbafe9719231c99d8",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/grid-cell.png",
+      "upstreamPath": "examples/customer-segmentation-server/grid-cell.png",
+      "originalSha256": "5a9ef82f63e19497d06836151856301cee3e53644173517516a5ddbb33a2ebcd",
+      "currentSha256": "5a9ef82f63e19497d06836151856301cee3e53644173517516a5ddbb33a2ebcd",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/mcp-app.html",
+      "upstreamPath": "examples/customer-segmentation-server/mcp-app.html",
+      "originalSha256": "7abb463bc4cbc4649f87f990654a5de1688d754b60240f650409ebc1241f08e6",
+      "currentSha256": "7abb463bc4cbc4649f87f990654a5de1688d754b60240f650409ebc1241f08e6",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/package.json",
+      "upstreamPath": "examples/customer-segmentation-server/package.json",
+      "originalSha256": "fd76d3496cd7b363fa4900716d22c29581a4e578ab69b2ad5b781345a3461335",
+      "currentSha256": "fd76d3496cd7b363fa4900716d22c29581a4e578ab69b2ad5b781345a3461335",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/screenshot.png",
+      "upstreamPath": "examples/customer-segmentation-server/screenshot.png",
+      "originalSha256": "0077f0818a591f81901fe8412bb9b195a32f7885ff98e94d717be37af00f4136",
+      "currentSha256": "0077f0818a591f81901fe8412bb9b195a32f7885ff98e94d717be37af00f4136",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/server.ts",
+      "upstreamPath": "examples/customer-segmentation-server/server.ts",
+      "originalSha256": "e21320a41239f4f30861cb3963d2e60bdc5b96d3223f71a66adec3f4e6c4e597",
+      "currentSha256": "b0dd871de234012a3028b4f569169dce93a0b1788b512f6286ae528220f10c30",
+      "modified": true,
+      "modificationNote": "Adapted to SDK v2 as for the other examples, and the mutable module-level dataset cache was removed in favor of deterministic seeded generation, because the hosted gallery serves stateless concurrent instances."
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/src/data-generator.ts",
+      "upstreamPath": "examples/customer-segmentation-server/src/data-generator.ts",
+      "originalSha256": "210e46a6e5e08e6e661f9b88fa30f5afb3de82f080cb10651131a61d0997ccc1",
+      "currentSha256": "beec064c94abedee9224237a817bdbb3d012652522ec9541504a34e6cd0cf389",
+      "modified": true,
+      "modificationNote": "Math.random replaced by a deterministic seeded PRNG threaded through the generator functions so the synthetic dataset is identical across stateless serverless instances; distributions and value ranges are unchanged."
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/src/global.css",
+      "upstreamPath": "examples/customer-segmentation-server/src/global.css",
+      "originalSha256": "742e13fc93a73cdba90f0932b17f0fa92691505f2568073969f06189d02a096e",
+      "currentSha256": "742e13fc93a73cdba90f0932b17f0fa92691505f2568073969f06189d02a096e",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/src/mcp-app.css",
+      "upstreamPath": "examples/customer-segmentation-server/src/mcp-app.css",
+      "originalSha256": "dc16ec6cd8ecc0e21867ee952071a1748cf0158d849d65f841a4359fe9797329",
+      "currentSha256": "dc16ec6cd8ecc0e21867ee952071a1748cf0158d849d65f841a4359fe9797329",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/src/mcp-app.ts",
+      "upstreamPath": "examples/customer-segmentation-server/src/mcp-app.ts",
+      "originalSha256": "6c36091172d3f9438e5cbe1251cbe212564b31a4e3eb36237ff3558d391e1559",
+      "currentSha256": "6c36091172d3f9438e5cbe1251cbe212564b31a4e3eb36237ff3558d391e1559",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/src/types.ts",
+      "upstreamPath": "examples/customer-segmentation-server/src/types.ts",
+      "originalSha256": "ac53bd353ea4ba17e3711faa6e8681afef2b37e496602a522dccfdd4f436b329",
+      "currentSha256": "ac53bd353ea4ba17e3711faa6e8681afef2b37e496602a522dccfdd4f436b329",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/tsconfig.json",
+      "upstreamPath": "examples/customer-segmentation-server/tsconfig.json",
+      "originalSha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "currentSha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/tsconfig.server.json",
+      "upstreamPath": "examples/customer-segmentation-server/tsconfig.server.json",
+      "originalSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "currentSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/customer-segmentation-server/vite.config.ts",
+      "upstreamPath": "examples/customer-segmentation-server/vite.config.ts",
+      "originalSha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "currentSha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/README.md",
+      "upstreamPath": "examples/scenario-modeler-server/README.md",
+      "originalSha256": "0cd200691639aceb323793336c87bd65b9c00f54bf32c7b7b462614767a05541",
+      "currentSha256": "0cd200691639aceb323793336c87bd65b9c00f54bf32c7b7b462614767a05541",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/grid-cell.png",
+      "upstreamPath": "examples/scenario-modeler-server/grid-cell.png",
+      "originalSha256": "12549033e9568b2c5ae758a9426267c6dda06dda72d9c25c1121270cb62844f2",
+      "currentSha256": "12549033e9568b2c5ae758a9426267c6dda06dda72d9c25c1121270cb62844f2",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/mcp-app.html",
+      "upstreamPath": "examples/scenario-modeler-server/mcp-app.html",
+      "originalSha256": "5516bcd2d36d1eb7740771e21a7ba5e24eabb95defcc36aa975c131665467bab",
+      "currentSha256": "5516bcd2d36d1eb7740771e21a7ba5e24eabb95defcc36aa975c131665467bab",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/package.json",
+      "upstreamPath": "examples/scenario-modeler-server/package.json",
+      "originalSha256": "a1c9f1ba477c2f70af1c5d6fff14486b68bd4c6a314ecfa4262acbe68bb491a9",
+      "currentSha256": "a1c9f1ba477c2f70af1c5d6fff14486b68bd4c6a314ecfa4262acbe68bb491a9",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/screenshot.png",
+      "upstreamPath": "examples/scenario-modeler-server/screenshot.png",
+      "originalSha256": "d0d65f2273ff48563f798830beeb97a0b0a8209afe6ba1de391283704e0e0148",
+      "currentSha256": "d0d65f2273ff48563f798830beeb97a0b0a8209afe6ba1de391283704e0e0148",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/server.ts",
+      "upstreamPath": "examples/scenario-modeler-server/server.ts",
+      "originalSha256": "0e37235816e16ba35a2a0b86b2163b65fcd107f95f677716a4ad73e51c0d8188",
+      "currentSha256": "cd81f3c6aeb2af908836308c0141f53606cc448ad46d8a0f1f06cf626bf1faca",
+      "modified": true,
+      "modificationNote": "Adapted from MCP SDK v1 + @modelcontextprotocol/ext-apps/server to the gallery's SDK v2 registration adapter (src/mcp-app-adapter.ts): import paths changed, createServer() became registerApp(server) receiving the per-request SDK v2 server, and the dist/mcp-app.html filesystem read was replaced by the immutable bundled resource store. Tool names, descriptions, schemas, resource URIs, MIME profile, _meta.ui declarations, fallback content, and UI behavior are unchanged."
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/components/MetricCard.tsx",
+      "upstreamPath": "examples/scenario-modeler-server/src/components/MetricCard.tsx",
+      "originalSha256": "610b61ae7137228eb924ec9c20d7453521c472b86e0fd597e4e63f79f0f4c8fb",
+      "currentSha256": "610b61ae7137228eb924ec9c20d7453521c472b86e0fd597e4e63f79f0f4c8fb",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/components/ProjectionChart.tsx",
+      "upstreamPath": "examples/scenario-modeler-server/src/components/ProjectionChart.tsx",
+      "originalSha256": "764069124030689baa19d3a5699736d1c33ce1f0dad03bffc3f20f0ae4bcf66e",
+      "currentSha256": "764069124030689baa19d3a5699736d1c33ce1f0dad03bffc3f20f0ae4bcf66e",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/components/SliderRow.tsx",
+      "upstreamPath": "examples/scenario-modeler-server/src/components/SliderRow.tsx",
+      "originalSha256": "d1a7840805075ad3990a4a5a9d8da801f95b7f3c30f9af01803457145950afc6",
+      "currentSha256": "d1a7840805075ad3990a4a5a9d8da801f95b7f3c30f9af01803457145950afc6",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/global.css",
+      "upstreamPath": "examples/scenario-modeler-server/src/global.css",
+      "originalSha256": "36b4ef38c6dc1bc2999cc02c663efbd9e478eaea6711c5d8db68c27b235777c7",
+      "currentSha256": "36b4ef38c6dc1bc2999cc02c663efbd9e478eaea6711c5d8db68c27b235777c7",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/hooks/useTheme.ts",
+      "upstreamPath": "examples/scenario-modeler-server/src/hooks/useTheme.ts",
+      "originalSha256": "444097191871c7472fc0874b99023e81765a969935e271369c0bd1d0276d8196",
+      "currentSha256": "444097191871c7472fc0874b99023e81765a969935e271369c0bd1d0276d8196",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/lib/calculations.ts",
+      "upstreamPath": "examples/scenario-modeler-server/src/lib/calculations.ts",
+      "originalSha256": "8d471e39094e1cb40a073644ddd5e9cfbe9936682ae120bf2b4fc9378c7544ed",
+      "currentSha256": "8d471e39094e1cb40a073644ddd5e9cfbe9936682ae120bf2b4fc9378c7544ed",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/lib/formatters.ts",
+      "upstreamPath": "examples/scenario-modeler-server/src/lib/formatters.ts",
+      "originalSha256": "b50778a4a2595c35da490f1109f2ce54c534ac9be32f0c937c94ad73374f2835",
+      "currentSha256": "b50778a4a2595c35da490f1109f2ce54c534ac9be32f0c937c94ad73374f2835",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/mcp-app.css",
+      "upstreamPath": "examples/scenario-modeler-server/src/mcp-app.css",
+      "originalSha256": "a9049fc92955a961c8bb1d0e9bf94a89f6fde1399fc2f4ebe71f40501fb3bca8",
+      "currentSha256": "a9049fc92955a961c8bb1d0e9bf94a89f6fde1399fc2f4ebe71f40501fb3bca8",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/mcp-app.tsx",
+      "upstreamPath": "examples/scenario-modeler-server/src/mcp-app.tsx",
+      "originalSha256": "71534b073f9f555a6f38c9b2e003100d1e15cc792d50dd687440f6c4ee955763",
+      "currentSha256": "71534b073f9f555a6f38c9b2e003100d1e15cc792d50dd687440f6c4ee955763",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/src/types.ts",
+      "upstreamPath": "examples/scenario-modeler-server/src/types.ts",
+      "originalSha256": "7596ebecc185801f548666b8a823119e3bcc2ff9f5defd4bbdd4ad9d2c32e7ac",
+      "currentSha256": "7596ebecc185801f548666b8a823119e3bcc2ff9f5defd4bbdd4ad9d2c32e7ac",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/tsconfig.json",
+      "upstreamPath": "examples/scenario-modeler-server/tsconfig.json",
+      "originalSha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "currentSha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/tsconfig.server.json",
+      "upstreamPath": "examples/scenario-modeler-server/tsconfig.server.json",
+      "originalSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "currentSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/scenario-modeler-server/vite.config.ts",
+      "upstreamPath": "examples/scenario-modeler-server/vite.config.ts",
+      "originalSha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "currentSha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/README.md",
+      "upstreamPath": "examples/transcript-server/README.md",
+      "originalSha256": "2f46e32452c8e1e453309e0c2eb2b672528718b769af75c48f0efa5bb6e4b22c",
+      "currentSha256": "2f46e32452c8e1e453309e0c2eb2b672528718b769af75c48f0efa5bb6e4b22c",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/grid-cell.png",
+      "upstreamPath": "examples/transcript-server/grid-cell.png",
+      "originalSha256": "8916e1335854745ab00504e6dd3e53da53543a4c0a6061c861b462d3047eca71",
+      "currentSha256": "8916e1335854745ab00504e6dd3e53da53543a4c0a6061c861b462d3047eca71",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/mcp-app.html",
+      "upstreamPath": "examples/transcript-server/mcp-app.html",
+      "originalSha256": "776cd008707b182c99535ef785668485f08829d9cd1827053819c6f5e0838510",
+      "currentSha256": "776cd008707b182c99535ef785668485f08829d9cd1827053819c6f5e0838510",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/package.json",
+      "upstreamPath": "examples/transcript-server/package.json",
+      "originalSha256": "18ec3b77882570200add3bfc102b39a83d935dcb0b22bf0c7794b090bd4d5e3f",
+      "currentSha256": "18ec3b77882570200add3bfc102b39a83d935dcb0b22bf0c7794b090bd4d5e3f",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/screenshot.png",
+      "upstreamPath": "examples/transcript-server/screenshot.png",
+      "originalSha256": "49ad4792a1a6321006605b24a95b02624c361b7e3e74a3d0c417cd1fa27711c9",
+      "currentSha256": "49ad4792a1a6321006605b24a95b02624c361b7e3e74a3d0c417cd1fa27711c9",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/server.ts",
+      "upstreamPath": "examples/transcript-server/server.ts",
+      "originalSha256": "f2738b9681b8b73d8f4186717bbb533458cd48f9e0977aac379d65397e61850d",
+      "currentSha256": "9157bb8df6362ca58abb5a5c2b46f88f51f348af56f78200a70374326b1025cd",
+      "modified": true,
+      "modificationNote": "Adapted from MCP SDK v1 + @modelcontextprotocol/ext-apps/server to the gallery's SDK v2 registration adapter (src/mcp-app-adapter.ts): import paths changed, createServer() became registerApp(server) receiving the per-request SDK v2 server, and the dist/mcp-app.html filesystem read was replaced by the immutable bundled resource store. Tool names, descriptions, schemas, resource URIs, MIME profile, _meta.ui declarations, fallback content, and UI behavior are unchanged."
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/src/global.css",
+      "upstreamPath": "examples/transcript-server/src/global.css",
+      "originalSha256": "5092cfff858791e52688cc23ab9118b0c1c81b2e09fec34f8067097f0e4cc11a",
+      "currentSha256": "5092cfff858791e52688cc23ab9118b0c1c81b2e09fec34f8067097f0e4cc11a",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/src/mcp-app.css",
+      "upstreamPath": "examples/transcript-server/src/mcp-app.css",
+      "originalSha256": "bc9027323531bfbb44add64dd78d6bb442bffcfdb9a77e2447401c47df7a6a66",
+      "currentSha256": "bc9027323531bfbb44add64dd78d6bb442bffcfdb9a77e2447401c47df7a6a66",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/src/mcp-app.ts",
+      "upstreamPath": "examples/transcript-server/src/mcp-app.ts",
+      "originalSha256": "9f67c0fea13e3a368a9e7b7cc7dc39f51b1ccc8af3ed91f5a4caee6763836b62",
+      "currentSha256": "9f67c0fea13e3a368a9e7b7cc7dc39f51b1ccc8af3ed91f5a4caee6763836b62",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/tsconfig.json",
+      "upstreamPath": "examples/transcript-server/tsconfig.json",
+      "originalSha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "currentSha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/tsconfig.server.json",
+      "upstreamPath": "examples/transcript-server/tsconfig.server.json",
+      "originalSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "currentSha256": "507edbe05aca0776c10a46603db9851e24943bd6b500a71fe84e506a5f618497",
+      "modified": false
+    },
+    {
+      "path": "upstream/ext-apps/transcript-server/vite.config.ts",
+      "upstreamPath": "examples/transcript-server/vite.config.ts",
+      "originalSha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "currentSha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "modified": false
+    }
+  ]
+}

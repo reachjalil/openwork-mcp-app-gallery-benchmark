@@ -1,0 +1,67 @@
+{
+  "name": "openwork-mcp-app-gallery-fable",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hosted MCP Apps Example Gallery (fable candidate): official modelcontextprotocol/ext-apps examples served as remote Streamable HTTP MCP servers. Independent adaptation; not an official Model Context Protocol service.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "node scripts/bundle-mcp-app-resources.mjs && node scripts/build-site.mjs && tsx scripts/dev-server.ts",
+    "build": "node scripts/bundle-mcp-app-resources.mjs && node scripts/build-site.mjs",
+    "build:vercel": "node scripts/bundle-mcp-app-resources.mjs && node scripts/build-site.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "test": "vitest run --exclude 'tests/browser/**'",
+    "test:contract": "vitest run tests/contract",
+    "test:browser": "node scripts/build-harness.mjs && playwright test",
+    "verify:notices": "node scripts/verify-notices.mjs",
+    "check:upstream": "node scripts/check-upstream.mjs",
+    "check:vercel": "node scripts/check-vercel-architecture.mjs",
+    "check:source-boundary": "node scripts/check-source-boundary.mjs",
+    "sbom": "node scripts/generate-sbom.mjs",
+    "audit:ci": "pnpm audit --prod --audit-level high",
+    "release:check": "pnpm run format:check && pnpm run lint && pnpm run typecheck && pnpm run verify:notices && pnpm run check:source-boundary && pnpm run audit:ci && pnpm run test && pnpm run build:vercel && pnpm run check:vercel && pnpm run sbom && pnpm run test:browser"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "hono": "4.13.2",
+    "mcp-handler": "2.1.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.8",
+    "@hono/node-server": "2.1.1",
+    "@modelcontextprotocol/ext-apps": "1.7.5",
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@playwright/test": "1.62.1",
+    "@types/dom-speech-recognition": "0.0.12",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "4.7.0",
+    "chart.js": "4.5.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tsx": "4.23.12",
+    "typescript": "5.9.3",
+    "vite": "6.4.3",
+    "vite-plugin-singlefile": "2.3.3",
+    "vitest": "4.1.10"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ],
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "next"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+name: Dependency review
+
+# GitHub's dependency-review API is available on public repositories (and on
+# private repositories only with GitHub Advanced Security). While this
+# repository is private, the job is a no-op and the locked `pnpm audit`
+# fallback in CI provides the dependency gate; once public, this review runs
+# on every pull request.
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Skip on private repository (locked-audit fallback applies)
+        if: github.event.repository.visibility != 'public'
+        run: echo "Private repository — pnpm audit in CI is the dependency gate."
+      - uses: actions/checkout@v7
+        if: github.event.repository.visibility == 'public'
+      - uses: actions/dependency-review-action@v4
+        if: github.event.repository.visibility == 'public'
+        with:
+          fail-on-severity: high
