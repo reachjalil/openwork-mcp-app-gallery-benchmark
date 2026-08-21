@@ -94,6 +94,25 @@ Root CI, comparison scripts, and assessment documents added on
 implementation prefix passed on 2026-08-21. Original-benchmark normalized
 scores: SOL 86.25, FABLE 91.25, GROK 72.50. Original verdicts unchanged.
 
-## Later phases
+## Phase 7 — Migration PR merged into `dev`
 
-Migration PR, Vercel takeover, production release, and source archival.
+- PR: https://github.com/reachjalil/openwork-mcp-app-gallery-benchmark/pull/1
+- Exact head: `d4efd2ea4869950e9a92adc9583ce46b09668153`
+- Merge commit / current `dev`: `f461e615cd0f47d7a9a091a2179eb7564cf5efa8`
+- Required checks on that head: `sol`, `fable`, `grok`, `comparison`, `compare`, `analyze`, and GHAS `CodeQL` all Passed
+- Merge method: normal merge commit, not squash
+- `main` remains bootstrap `e6a15ce397767373e94098f3f2182d44f431e9ba`
+- No monorepo `forward` branch
+- Historical GROK PR #1 remains OPEN at `6c0e6bab7eb579da5eee0a8e2cc9de2f57b855c4`
+- Stable origins still returned HTTP 200 on `/healthz` after the GitHub merge
+
+Repository rulesets added: `dev-protection` (no force-push/delete) and
+`main-protection` (no force-push/delete; pull request required).
+
+## Checkpoint — stopping for Vercel takeover
+
+CLI cannot transfer FABLE/GROK out of Different AI or grant the Vercel
+GitHub App access to the new repository. Production Git sources and Root
+Directories are still the old single-repo `.` layout. Do not treat the
+takeover as complete until Jalil confirms and the agent reinspects live
+Vercel configuration.
