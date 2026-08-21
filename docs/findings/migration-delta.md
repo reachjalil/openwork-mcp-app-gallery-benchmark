@@ -12,6 +12,7 @@ runtime homogenization.
 | Uniform `ci:check` scripts | Give root CI one entry point per candidate |
 | Root orchestration `package.json` | Run candidate commands with `pnpm --dir` |
 | Root `.github/workflows` | Nested candidate workflows are imported history only |
+| `.github/codeql/codeql-config.yml` | Ignore frozen `implementations/*/upstream/**` snapshots so default CodeQL does not treat documented original findings as new monorepo defects |
 | Root comparison scripts and `docs/` | Shared evidence and scoring |
 | `.vercel/` gitignored at root | Never commit local project linkage |
 
