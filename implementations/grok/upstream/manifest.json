@@ -1,0 +1,709 @@
+{
+  "upstreamRepository": "modelcontextprotocol/ext-apps",
+  "upstreamCommit": "10195ad91851502134930e9b80ec2c04e277a720",
+  "importedAt": "2026-08-17",
+  "files": [
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/README.md",
+      "localPath": "upstream/ext-apps/basic-server-react/README.md",
+      "sha256": "d8db9d53d283744289fa2313029e6c2b66644f22716f4c7ba719b0ac11819638",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/grid-cell.png",
+      "localPath": "upstream/ext-apps/basic-server-react/grid-cell.png",
+      "sha256": "4f59f5b7067ce30bef3592ab992a4ba02c0c8a1ff34c6481611a20fcbccc1dde",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/mcp-app.html",
+      "localPath": "upstream/ext-apps/basic-server-react/mcp-app.html",
+      "sha256": "586e099d92ede8a0382784b9e2473b8a24336c5b028a7b3a7691bdc5aa3b5df7",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/package.json",
+      "localPath": "upstream/ext-apps/basic-server-react/package.json",
+      "sha256": "72ee92186ba2d4a3b2084395aa7aa9bf230f523a53875b3ff71f686ce819b5fd",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/screenshot.png",
+      "localPath": "upstream/ext-apps/basic-server-react/screenshot.png",
+      "sha256": "d0b800cf1eb7e4ad7de8bb4b10b367bf89ca0002f24ed717401a1f3e0a178ee4",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/server.ts",
+      "localPath": "upstream/ext-apps/basic-server-react/server.ts",
+      "sha256": "468bba2471e14832d6312630d39a805d3cc03fe905ea393f38f23e1d703ac2c3",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/src/global.css",
+      "localPath": "upstream/ext-apps/basic-server-react/src/global.css",
+      "sha256": "ab90b272c58ebbc6582e70f9850a0fb48c83a034ea9d91341eeb8b9025cddd89",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/src/mcp-app.module.css",
+      "localPath": "upstream/ext-apps/basic-server-react/src/mcp-app.module.css",
+      "sha256": "89fd47acbdc78578a03d1377373f5f431594271881d116f4aaa443a1437dd736",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/src/mcp-app.tsx",
+      "localPath": "upstream/ext-apps/basic-server-react/src/mcp-app.tsx",
+      "sha256": "fa3c831c659d21a0dbc9c74560b8a9ae37514fcc431efce4ccba294e7f6d13a8",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/src/vite-env.d.ts",
+      "localPath": "upstream/ext-apps/basic-server-react/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/tsconfig.json",
+      "localPath": "upstream/ext-apps/basic-server-react/tsconfig.json",
+      "sha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/basic-server-react/vite.config.ts",
+      "localPath": "upstream/ext-apps/basic-server-react/vite.config.ts",
+      "sha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/README.md",
+      "localPath": "upstream/ext-apps/budget-allocator-server/README.md",
+      "sha256": "398bd87d8f8d050bf730957228ce9eccbc7ad096d7712d766c156e69ca6d2f80",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/grid-cell.png",
+      "localPath": "upstream/ext-apps/budget-allocator-server/grid-cell.png",
+      "sha256": "81e9eb381dcbc75db66cd285b0a66548409867b50ffd6c7a0cfda211c7d5cbbc",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/mcp-app.html",
+      "localPath": "upstream/ext-apps/budget-allocator-server/mcp-app.html",
+      "sha256": "26ac6e944d5d8611cd6d6b3d8d20ce3be907116b6c215fb4405e1365252a9f26",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/package.json",
+      "localPath": "upstream/ext-apps/budget-allocator-server/package.json",
+      "sha256": "b271f1022c3ed58d4f843fbbde634a89a509cf3f62c05b35890cdcdb866708cc",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/screenshot.png",
+      "localPath": "upstream/ext-apps/budget-allocator-server/screenshot.png",
+      "sha256": "42385d199c4b63ef0769bf30aaa62721b1f8be9e9a50127a3b50623755f927bc",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/server.ts",
+      "localPath": "upstream/ext-apps/budget-allocator-server/server.ts",
+      "sha256": "384a6c6e915c2f8ec385c8b54ec4bce1e7d178e5bfc205d1b4e5c51f769914ff",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/src/global.css",
+      "localPath": "upstream/ext-apps/budget-allocator-server/src/global.css",
+      "sha256": "c50fdc4e3e9fad5863c26f40d2eae76d689c211dea3d2e7172a706983d1239f0",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/src/mcp-app.css",
+      "localPath": "upstream/ext-apps/budget-allocator-server/src/mcp-app.css",
+      "sha256": "cf930312bf5970495d046e619f711bac07d46f0def1bb572ea97c0352fe1d1e2",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/src/mcp-app.ts",
+      "localPath": "upstream/ext-apps/budget-allocator-server/src/mcp-app.ts",
+      "sha256": "0cb98da846f103ac6addd45052707cbcab299b12db6ef36f9c00ba1863468764",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/tsconfig.json",
+      "localPath": "upstream/ext-apps/budget-allocator-server/tsconfig.json",
+      "sha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/budget-allocator-server/vite.config.ts",
+      "localPath": "upstream/ext-apps/budget-allocator-server/vite.config.ts",
+      "sha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/README.md",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/README.md",
+      "sha256": "6fbda9d555c143934414268edb2f57bbb364e05a88b870412e05df3b32634419",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/grid-cell.png",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/grid-cell.png",
+      "sha256": "f4ea35cbdf8c3bf0d506248d9c70a201230b7643f71905a9a2938195376acf3c",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/mcp-app.html",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/mcp-app.html",
+      "sha256": "6f0b5400c3813bcd0af7327a8775d727245aa32b57438bdaa48391dd37fa36e3",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/package.json",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/package.json",
+      "sha256": "b31a615117dda0c5b89524b9171728ff69e46a511b2bf6d50c574dfa5abcdc17",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/screenshot.png",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/screenshot.png",
+      "sha256": "f55cd4a1ec2d50b8250d93d9254dbdf87a3fc9a42487e8b8f872f5f02ca3cd8d",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/server.ts",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/server.ts",
+      "sha256": "34d7d9d2cfca3fb9863c454888690f077b50a79307176be81ce024b2d5b4b085",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/src/global.css",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/src/global.css",
+      "sha256": "f2d510120108e6bdd961ec089c89f1bb87b72e1d5f1088654664b4e6d141ee4e",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/src/mcp-app.module.css",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/src/mcp-app.module.css",
+      "sha256": "3ebb4ceda3b5f56e67ad03fa81eb2f88b75c1f1033e1dca96050679feb2b65c9",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/src/mcp-app.tsx",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/src/mcp-app.tsx",
+      "sha256": "481afa3fa11f774476cec1399545773b15be17f4517d1aba13e5c822141117c3",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/src/vite-env.d.ts",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/tsconfig.json",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/tsconfig.json",
+      "sha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/cohort-heatmap-server/vite.config.ts",
+      "localPath": "upstream/ext-apps/cohort-heatmap-server/vite.config.ts",
+      "sha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/README.md",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/README.md",
+      "sha256": "cc5ae3a4aa8d3404c72fefca4fb66de45bd40d950859ec1fbafe9719231c99d8",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/grid-cell.png",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/grid-cell.png",
+      "sha256": "5a9ef82f63e19497d06836151856301cee3e53644173517516a5ddbb33a2ebcd",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/mcp-app.html",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/mcp-app.html",
+      "sha256": "7abb463bc4cbc4649f87f990654a5de1688d754b60240f650409ebc1241f08e6",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/package.json",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/package.json",
+      "sha256": "fd76d3496cd7b363fa4900716d22c29581a4e578ab69b2ad5b781345a3461335",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/screenshot.png",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/screenshot.png",
+      "sha256": "0077f0818a591f81901fe8412bb9b195a32f7885ff98e94d717be37af00f4136",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/server.ts",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/server.ts",
+      "sha256": "e21320a41239f4f30861cb3963d2e60bdc5b96d3223f71a66adec3f4e6c4e597",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/src/data-generator.ts",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/src/data-generator.ts",
+      "sha256": "afd5a3ec9cc88f03b455606e68ae47fe3cbd64d47dd36d8282749228b68f781c",
+      "license": "MIT",
+      "modifications": "Copied from upstream. Gallery modification: synthetic sampling uses crypto.getRandomValues instead of Math.random, and the detail-panel CSS class uses toLowerCase without a no-op hyphen replace."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/src/global.css",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/src/global.css",
+      "sha256": "742e13fc93a73cdba90f0932b17f0fa92691505f2568073969f06189d02a096e",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/src/mcp-app.css",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/src/mcp-app.css",
+      "sha256": "dc16ec6cd8ecc0e21867ee952071a1748cf0158d849d65f841a4359fe9797329",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/src/mcp-app.ts",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/src/mcp-app.ts",
+      "sha256": "be6ce1f764fa5d9cd9adfe64823db3e2f4cef1047c915d1f9a7f48a1f1ff0bcd",
+      "license": "MIT",
+      "modifications": "Copied from upstream. Gallery modification: synthetic sampling uses crypto.getRandomValues instead of Math.random, and the detail-panel CSS class uses toLowerCase without a no-op hyphen replace."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/src/types.ts",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/src/types.ts",
+      "sha256": "ac53bd353ea4ba17e3711faa6e8681afef2b37e496602a522dccfdd4f436b329",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/tsconfig.json",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/tsconfig.json",
+      "sha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/customer-segmentation-server/vite.config.ts",
+      "localPath": "upstream/ext-apps/customer-segmentation-server/vite.config.ts",
+      "sha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/README.md",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/README.md",
+      "sha256": "0cd200691639aceb323793336c87bd65b9c00f54bf32c7b7b462614767a05541",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/grid-cell.png",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/grid-cell.png",
+      "sha256": "12549033e9568b2c5ae758a9426267c6dda06dda72d9c25c1121270cb62844f2",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/mcp-app.html",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/mcp-app.html",
+      "sha256": "5516bcd2d36d1eb7740771e21a7ba5e24eabb95defcc36aa975c131665467bab",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/package.json",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/package.json",
+      "sha256": "a1c9f1ba477c2f70af1c5d6fff14486b68bd4c6a314ecfa4262acbe68bb491a9",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/screenshot.png",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/screenshot.png",
+      "sha256": "d0d65f2273ff48563f798830beeb97a0b0a8209afe6ba1de391283704e0e0148",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/server.ts",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/server.ts",
+      "sha256": "0e37235816e16ba35a2a0b86b2163b65fcd107f95f677716a4ad73e51c0d8188",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/components/MetricCard.tsx",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/components/MetricCard.tsx",
+      "sha256": "610b61ae7137228eb924ec9c20d7453521c472b86e0fd597e4e63f79f0f4c8fb",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/components/ProjectionChart.tsx",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/components/ProjectionChart.tsx",
+      "sha256": "764069124030689baa19d3a5699736d1c33ce1f0dad03bffc3f20f0ae4bcf66e",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/components/SliderRow.tsx",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/components/SliderRow.tsx",
+      "sha256": "d1a7840805075ad3990a4a5a9d8da801f95b7f3c30f9af01803457145950afc6",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/global.css",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/global.css",
+      "sha256": "36b4ef38c6dc1bc2999cc02c663efbd9e478eaea6711c5d8db68c27b235777c7",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/hooks/useTheme.ts",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/hooks/useTheme.ts",
+      "sha256": "444097191871c7472fc0874b99023e81765a969935e271369c0bd1d0276d8196",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/lib/calculations.ts",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/lib/calculations.ts",
+      "sha256": "8d471e39094e1cb40a073644ddd5e9cfbe9936682ae120bf2b4fc9378c7544ed",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/lib/formatters.ts",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/lib/formatters.ts",
+      "sha256": "b50778a4a2595c35da490f1109f2ce54c534ac9be32f0c937c94ad73374f2835",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/mcp-app.css",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/mcp-app.css",
+      "sha256": "a9049fc92955a961c8bb1d0e9bf94a89f6fde1399fc2f4ebe71f40501fb3bca8",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/mcp-app.tsx",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/mcp-app.tsx",
+      "sha256": "71534b073f9f555a6f38c9b2e003100d1e15cc792d50dd687440f6c4ee955763",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/src/types.ts",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/src/types.ts",
+      "sha256": "7596ebecc185801f548666b8a823119e3bcc2ff9f5defd4bbdd4ad9d2c32e7ac",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/tsconfig.json",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/tsconfig.json",
+      "sha256": "f70b5bb25d3c4027837981973dc6a99bf43da9c9ed74b6f851b5a8447e48364c",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/scenario-modeler-server/vite.config.ts",
+      "localPath": "upstream/ext-apps/scenario-modeler-server/vite.config.ts",
+      "sha256": "5db9ebda3569c5962c7a97b623a16c58f22816940397e6ffcef9c5043575e1cc",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/README.md",
+      "localPath": "upstream/ext-apps/transcript-server/README.md",
+      "sha256": "2f46e32452c8e1e453309e0c2eb2b672528718b769af75c48f0efa5bb6e4b22c",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/grid-cell.png",
+      "localPath": "upstream/ext-apps/transcript-server/grid-cell.png",
+      "sha256": "8916e1335854745ab00504e6dd3e53da53543a4c0a6061c861b462d3047eca71",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/mcp-app.html",
+      "localPath": "upstream/ext-apps/transcript-server/mcp-app.html",
+      "sha256": "776cd008707b182c99535ef785668485f08829d9cd1827053819c6f5e0838510",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/package.json",
+      "localPath": "upstream/ext-apps/transcript-server/package.json",
+      "sha256": "18ec3b77882570200add3bfc102b39a83d935dcb0b22bf0c7794b090bd4d5e3f",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/screenshot.png",
+      "localPath": "upstream/ext-apps/transcript-server/screenshot.png",
+      "sha256": "49ad4792a1a6321006605b24a95b02624c361b7e3e74a3d0c417cd1fa27711c9",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/server.ts",
+      "localPath": "upstream/ext-apps/transcript-server/server.ts",
+      "sha256": "f2738b9681b8b73d8f4186717bbb533458cd48f9e0977aac379d65397e61850d",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/src/global.css",
+      "localPath": "upstream/ext-apps/transcript-server/src/global.css",
+      "sha256": "5092cfff858791e52688cc23ab9118b0c1c81b2e09fec34f8067097f0e4cc11a",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/src/mcp-app.css",
+      "localPath": "upstream/ext-apps/transcript-server/src/mcp-app.css",
+      "sha256": "bc9027323531bfbb44add64dd78d6bb442bffcfdb9a77e2447401c47df7a6a66",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/src/mcp-app.ts",
+      "localPath": "upstream/ext-apps/transcript-server/src/mcp-app.ts",
+      "sha256": "9f67c0fea13e3a368a9e7b7cc7dc39f51b1ccc8af3ed91f5a4caee6763836b62",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/tsconfig.json",
+      "localPath": "upstream/ext-apps/transcript-server/tsconfig.json",
+      "sha256": "9f00d821688a26b79acb25756c11130ca730ce6f89566e4d2aeac8081acff83f",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "examples/transcript-server/vite.config.ts",
+      "localPath": "upstream/ext-apps/transcript-server/vite.config.ts",
+      "sha256": "b811a914a0fb33d6bf6e892d27fa5354df978f29e547ce7278bd4d97fd8ce24d",
+      "license": "MIT",
+      "modifications": "Copied unchanged except standalone HTTP/stdio listeners (main.ts) were omitted. Runtime registration uses a gallery-owned SDK v2 adapter; HTML is served from the immutable generated resource bundle rather than dist/mcp-app.html."
+    },
+    {
+      "repository": "modelcontextprotocol/ext-apps",
+      "commit": "10195ad91851502134930e9b80ec2c04e277a720",
+      "originalPath": "LICENSE",
+      "localPath": "upstream/ext-apps-LICENSE",
+      "sha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a",
+      "license": "Apache-2.0/MIT mixed statement",
+      "modifications": "Copied the pinned upstream LICENSE for notices."
+    }
+  ]
+}

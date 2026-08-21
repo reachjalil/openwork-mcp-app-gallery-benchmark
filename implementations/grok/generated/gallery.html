@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hosted MCP Apps Example Gallery</title>
+  <meta name="description" content="Independent hosted adaptation of official MCP Apps examples. Not an official Model Context Protocol service.">
+  <link rel="stylesheet" href="/assets/gallery.8a7c8cf62e72.css">
+</head>
+<body>
+  <a class="skip" href="#catalog">Skip to examples</a>
+  <header>
+    <p class="kicker">Independent hosted adaptation</p>
+    <h1>MCP Apps example gallery</h1>
+    <p>This gallery hosts six official MCP Apps examples as distinct remote Streamable HTTP servers. It is not an official Model Context Protocol service.</p>
+  </header>
+  <section>
+    <h2>How to try in OpenWork</h2>
+    <ol>
+      <li>Copy one MCP URL below.</li>
+      <li>Add it as a remote Streamable HTTP MCP server in an MCP Apps-compatible host.</li>
+      <li>Send the suggested prompt.</li>
+      <li>If the host has no App UI, the ordinary text or structured tool result still works.</li>
+    </ol>
+  </section>
+  <main id="catalog" class="grid">
+    
+    <article class="card" data-slug="get-time">
+      <img src="/screenshots/get-time.svg" alt="Get Time app showing the current server time and a refresh button" width="640" height="360">
+      <h2>Get Time</h2>
+      <p>Smallest tool plus interactive UI round trip for the current server time.</p>
+      <p class="meta"><span>starter</span> · <span>synthetic demo data</span></p>
+      <p class="note">Returns the current server clock. No user data is stored.</p>
+      <p><strong>Suggested prompt:</strong> Show me the current server time using the interactive app.</p>
+      <p><a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/basic-server-react">Audited upstream source</a> at <code>10195ad91851</code></p>
+      <p>MCP endpoint: <code class="endpoint" data-path="/apps/get-time/mcp">/apps/get-time/mcp</code></p>
+      <p>Compatibility: current 2026-07-28 and 2025-era Streamable HTTP fallback. Last verified build: <span data-build>local</span>.</p>
+      <p class="label">Implementation: grok</p>
+      <button type="button" class="copy" data-copy="/apps/get-time/mcp" aria-label="Copy MCP URL for Get Time" aria-describedby="copy-status">Copy MCP URL</button>
+    </article>
+
+    <article class="card" data-slug="budget-allocator">
+      <img src="/screenshots/budget-allocator.svg" alt="Budget allocator donut chart with category sliders" width="640" height="360">
+      <h2>Budget Allocator</h2>
+      <p>Adjust a synthetic seed-stage budget with charts and recalculation.</p>
+      <p class="meta"><span>form</span> · <span>synthetic demo data</span></p>
+      <p class="note">Synthetic demo data. Numeric ranges and payload size are clamped.</p>
+      <p><strong>Suggested prompt:</strong> Create a $1 million seed-stage budget I can adjust interactively.</p>
+      <p><a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/budget-allocator-server">Audited upstream source</a> at <code>10195ad91851</code></p>
+      <p>MCP endpoint: <code class="endpoint" data-path="/apps/budget-allocator/mcp">/apps/budget-allocator/mcp</code></p>
+      <p>Compatibility: current 2026-07-28 and 2025-era Streamable HTTP fallback. Last verified build: <span data-build>local</span>.</p>
+      <p class="label">Implementation: grok</p>
+      <button type="button" class="copy" data-copy="/apps/budget-allocator/mcp" aria-label="Copy MCP URL for Budget Allocator" aria-describedby="copy-status">Copy MCP URL</button>
+    </article>
+
+    <article class="card" data-slug="cohort-heatmap">
+      <img src="/screenshots/cohort-heatmap.svg" alt="Cohort retention heatmap with rows of signup months" width="640" height="360">
+      <h2>Cohort Heatmap</h2>
+      <p>Explore a dense interactive customer-retention heatmap.</p>
+      <p class="meta"><span>visualization</span> · <span>synthetic demo data</span></p>
+      <p class="note">Fixed synthetic dataset. No uploads.</p>
+      <p><strong>Suggested prompt:</strong> Show me an interactive customer-retention cohort heatmap.</p>
+      <p><a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/cohort-heatmap-server">Audited upstream source</a> at <code>10195ad91851</code></p>
+      <p>MCP endpoint: <code class="endpoint" data-path="/apps/cohort-heatmap/mcp">/apps/cohort-heatmap/mcp</code></p>
+      <p>Compatibility: current 2026-07-28 and 2025-era Streamable HTTP fallback. Last verified build: <span data-build>local</span>.</p>
+      <p class="label">Implementation: grok</p>
+      <button type="button" class="copy" data-copy="/apps/cohort-heatmap/mcp" aria-label="Copy MCP URL for Cohort Heatmap" aria-describedby="copy-status">Copy MCP URL</button>
+    </article>
+
+    <article class="card" data-slug="customer-segmentation">
+      <img src="/screenshots/customer-segmentation.svg" alt="Scatter chart of synthetic customers by segment" width="640" height="360">
+      <h2>Customer Segmentation</h2>
+      <p>Filter synthetic customers by revenue and engagement.</p>
+      <p class="meta"><span>chart</span> · <span>synthetic demo data</span></p>
+      <p class="note">Fixed synthetic dataset. Filters are bounded.</p>
+      <p><strong>Suggested prompt:</strong> Let me explore customers by revenue and engagement.</p>
+      <p><a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/customer-segmentation-server">Audited upstream source</a> at <code>10195ad91851</code></p>
+      <p>MCP endpoint: <code class="endpoint" data-path="/apps/customer-segmentation/mcp">/apps/customer-segmentation/mcp</code></p>
+      <p>Compatibility: current 2026-07-28 and 2025-era Streamable HTTP fallback. Last verified build: <span data-build>local</span>.</p>
+      <p class="label">Implementation: grok</p>
+      <button type="button" class="copy" data-copy="/apps/customer-segmentation/mcp" aria-label="Copy MCP URL for Customer Segmentation" aria-describedby="copy-status">Copy MCP URL</button>
+    </article>
+
+    <article class="card" data-slug="scenario-modeler">
+      <img src="/screenshots/scenario-modeler.svg" alt="Scenario modeler with projection chart and sliders" width="640" height="360">
+      <h2>Scenario Modeler</h2>
+      <p>Compare synthetic SaaS growth plans over stateless tools.</p>
+      <p class="meta"><span>form</span> · <span>synthetic demo data</span></p>
+      <p class="note">Synthetic financial scenarios. Scenario count and numeric inputs are clamped.</p>
+      <p><strong>Suggested prompt:</strong> Compare a bootstrapped plan with a venture-funded growth plan.</p>
+      <p><a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/scenario-modeler-server">Audited upstream source</a> at <code>10195ad91851</code></p>
+      <p>MCP endpoint: <code class="endpoint" data-path="/apps/scenario-modeler/mcp">/apps/scenario-modeler/mcp</code></p>
+      <p>Compatibility: current 2026-07-28 and 2025-era Streamable HTTP fallback. Last verified build: <span data-build>local</span>.</p>
+      <p class="label">Implementation: grok</p>
+      <button type="button" class="copy" data-copy="/apps/scenario-modeler/mcp" aria-label="Copy MCP URL for Scenario Modeler" aria-describedby="copy-status">Copy MCP URL</button>
+    </article>
+
+    <article class="card" data-slug="transcript">
+      <img src="/screenshots/transcript.svg" alt="Interactive transcript navigator with timed entries" width="640" height="360">
+      <h2>Transcript</h2>
+      <p>Navigate a structured transcript in an interactive view.</p>
+      <p class="meta"><span>media</span> · <span>synthetic demo data</span></p>
+      <p class="note">Demo transcript only. Speech recognition stays in the browser when used.</p>
+      <p><strong>Suggested prompt:</strong> Show me an interactive transcript I can navigate.</p>
+      <p><a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/transcript-server">Audited upstream source</a> at <code>10195ad91851</code></p>
+      <p>MCP endpoint: <code class="endpoint" data-path="/apps/transcript/mcp">/apps/transcript/mcp</code></p>
+      <p>Compatibility: current 2026-07-28 and 2025-era Streamable HTTP fallback. Last verified build: <span data-build>local</span>.</p>
+      <p class="label">Implementation: grok</p>
+      <button type="button" class="copy" data-copy="/apps/transcript/mcp" aria-label="Copy MCP URL for Transcript" aria-describedby="copy-status">Copy MCP URL</button>
+    </article>
+  </main>
+  <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+  <footer>
+    <p>Pinned upstream: <code>10195ad91851502134930e9b80ec2c04e277a720</code>. Wave 1 has no accounts, cookies, or durable user data. There is no SLA.</p>
+  </footer>
+  <script src="/assets/gallery.66108bc744a2.js"></script>
+</body>
+</html>
