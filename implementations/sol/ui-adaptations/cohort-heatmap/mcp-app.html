@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cohort Heatmap</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="kicker">Synthetic cohort analysis</p>
+          <h1>Retention heatmap</h1>
+        </div>
+        <div class="controls">
+          <label
+            >Metric<select id="metric">
+              <option value="retention">Retention</option>
+              <option value="revenue">Revenue retention</option>
+              <option value="active">Active users</option>
+            </select></label
+          ><label
+            >Period<select id="period">
+              <option value="monthly">Monthly</option>
+              <option value="weekly">Weekly</option>
+            </select></label
+          >
+        </div>
+      </header>
+      <p id="status" role="status" aria-live="polite">
+        Loading bounded cohort data…
+      </p>
+      <div class="scroll">
+        <div id="grid" class="grid" aria-label="Cohort retention heatmap"></div>
+      </div>
+      <div class="legend"><span>Low</span><i></i><span>High</span></div>
+    </main>
+    <script type="module" src="/src/mcp-app.ts"></script>
+  </body>
+</html>

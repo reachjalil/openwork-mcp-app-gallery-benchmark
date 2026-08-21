@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Scenario Modeler</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="kicker">Synthetic financial model</p>
+          <h1>SaaS scenario modeler</h1>
+        </div>
+        <select id="template" aria-label="Scenario template">
+          <option value="">Custom scenario</option>
+        </select>
+      </header>
+      <section class="layout">
+        <form id="inputs">
+          <label
+            >Starting MRR <output id="startingMRR-value"></output
+            ><input
+              id="startingMRR"
+              type="range"
+              min="10000"
+              max="500000"
+              step="5000" /></label
+          ><label
+            >Growth rate <output id="monthlyGrowthRate-value"></output
+            ><input
+              id="monthlyGrowthRate"
+              type="range"
+              min="0"
+              max="20"
+              step="0.5" /></label
+          ><label
+            >Churn rate <output id="monthlyChurnRate-value"></output
+            ><input
+              id="monthlyChurnRate"
+              type="range"
+              min="0"
+              max="15"
+              step="0.5" /></label
+          ><label
+            >Gross margin <output id="grossMargin-value"></output
+            ><input
+              id="grossMargin"
+              type="range"
+              min="20"
+              max="100"
+              step="1" /></label
+          ><label
+            >Fixed costs <output id="fixedCosts-value"></output
+            ><input
+              id="fixedCosts"
+              type="range"
+              min="0"
+              max="500000"
+              step="5000" /></label
+          ><button type="submit">Recalculate on server</button>
+        </form>
+        <div>
+          <div id="summary" class="summary" aria-live="polite"></div>
+          <svg
+            id="chart"
+            role="img"
+            aria-label="Twelve-month MRR projection"
+            viewBox="0 0 600 240"
+          ></svg>
+          <p id="status" role="status"></p>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/mcp-app.ts"></script>
+  </body>
+</html>

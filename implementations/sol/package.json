@@ -1,0 +1,78 @@
+{
+  "name": "openwork-mcp-app-gallery-sol",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "description": "Independent hosted adaptation of six official MCP Apps examples.",
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "dev:test": "pnpm run build:test-host && tsx scripts/dev.ts",
+    "generate:upstream": "tsx scripts/generate-upstream-manifest.ts",
+    "build:mcp-apps": "tsx scripts/bundle-mcp-app-resources.ts",
+    "build:gallery": "tsx scripts/generate-gallery.ts",
+    "build:test-host": "tsx scripts/bundle-test-host.ts",
+    "generate:sbom": "tsx scripts/generate-sbom.ts",
+    "check:lockfile": "pnpm install --frozen-lockfile",
+    "generate": "pnpm run generate:upstream && pnpm run build:mcp-apps && pnpm run build:gallery && pnpm run generate:sbom",
+    "build": "pnpm run generate && tsc --noEmit",
+    "build:vercel": "pnpm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint app.ts src scripts tests test-support playwright.config.ts",
+    "format/check": "prettier --check .",
+    "test:contract": "vitest run tests/contract",
+    "test:gateway": "vitest run tests/gateway",
+    "test:browser": "playwright test",
+    "verify:deployment": "tsx scripts/verify-deployment.ts",
+    "verify:notices": "tsx scripts/verify-notices.ts",
+    "check:upstream": "tsx scripts/check-upstream.ts",
+    "check:upstream:remote": "tsx scripts/check-upstream.ts --remote",
+    "check:vercel": "tsx scripts/check-vercel-architecture.ts",
+    "scan:source": "tsx scripts/scan-source-boundary.ts",
+    "scan:secrets": "tsx scripts/scan-secrets.ts",
+    "audit:ci": "pnpm audit --audit-level=high && pnpm run scan:source && pnpm run scan:secrets && pnpm run generate:sbom",
+    "release:check:ci": "pnpm run check:lockfile && pnpm run format/check && pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run test:browser && pnpm run verify:notices && pnpm run check:upstream && pnpm run check:vercel && pnpm run audit:ci && pnpm run build:vercel",
+    "release:check": "pnpm run release:check:ci && vercel build --prod --yes"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "hono": "4.13.2",
+    "mcp-handler": "2.1.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@hono/node-server": "2.1.1",
+    "@modelcontextprotocol/client": "2.0.0",
+    "@modelcontextprotocol/ext-apps": "1.7.5",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.2.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "4.7.0",
+    "chart.js": "4.5.1",
+    "eslint": "9.39.5",
+    "prettier": "3.9.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "terser": "5.50.0",
+    "tsx": "4.23.12",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.67.0",
+    "vite": "6.4.3",
+    "vite-plugin-singlefile": "2.3.3",
+    "vitest": "4.1.10",
+    "yaml": "2.8.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+:root {
+  color-scheme: light dark;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--color-text-primary, #142536);
+}
+body {
+  margin: 0;
+}
+main {
+  padding: 18px;
+  background: var(--color-background-primary, #fff);
+  border: 1px solid var(--color-border-secondary, #d3dcdf);
+  border-radius: 18px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: end;
+}
+.kicker {
+  margin: 0 0 6px;
+  color: #ef6a4c;
+  font:
+    700 10px ui-monospace,
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+h1 {
+  margin: 0;
+  font:
+    800 28px Georgia,
+    serif;
+}
+.controls {
+  display: flex;
+  gap: 8px;
+}
+.controls label {
+  font-size: 11px;
+  font-weight: 700;
+}
+.controls select {
+  display: block;
+  margin-top: 4px;
+  min-height: 34px;
+  border: 1px solid #aebdc4;
+  border-radius: 8px;
+  background: var(--color-background-secondary, #f1f4f3);
+  color: inherit;
+}
+#status {
+  min-height: 1.2em;
+  color: var(--color-text-secondary, #53697d);
+  font-size: 12px;
+}
+.scroll {
+  overflow: auto;
+}
+.grid {
+  display: grid;
+  gap: 3px;
+  min-width: 680px;
+  align-items: stretch;
+}
+.grid > strong,
+.grid > b {
+  font-size: 10px;
+  padding: 6px;
+  align-self: center;
+}
+.grid > b {
+  font-weight: 600;
+}
+.cell {
+  border: 0;
+  border-radius: 5px;
+  min-height: 34px;
+  background: var(--heat, #e8eceb);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+.cell:disabled {
+  background: #e8eceb;
+}
+.cell:focus-visible {
+  outline: 3px solid #ffb000;
+  z-index: 2;
+}
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: end;
+  margin-top: 10px;
+  font-size: 10px;
+}
+.legend i {
+  width: 110px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    hsl(0 70% 50%),
+    hsl(60 70% 50%),
+    hsl(120 70% 40%)
+  );
+}
+@media (max-width: 600px) {
+  header {
+    display: block;
+  }
+  .controls {
+    margin-top: 12px;
+  }
+  main {
+    padding: 12px;
+  }
+}
