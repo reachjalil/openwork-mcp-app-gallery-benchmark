@@ -70,10 +70,30 @@ bypassed, or closed.
 | FABLE | `forward` | `monorepo-import-fable-2026-08-21` | `2d8547d1b0e1d962c8d799d1b509d889dc96ef08` | Passed |
 | GROK | `grok/gallery-v1` | `monorepo-import-grok-2026-08-21` | `6c0e6bab7eb579da5eee0a8e2cc9de2f57b855c4` | Incomplete |
 
-GROK smallest source check on the exact import head: `pnpm install --frozen-lockfile` and `pnpm run typecheck` passed with Node v24.18.0 and pnpm 10.28.0. Full `pnpm release:check` was started from that same head and is recorded in later sections when it finishes.
+GROK source-head checks on `6c0e6bab7eb579da5eee0a8e2cc9de2f57b855c4` with
+Node v24.18.0 and pnpm 10.28.0:
+
+- `pnpm install --frozen-lockfile` and `pnpm run typecheck`: Passed
+- `pnpm run release:check`: Passed in 14,938 ms
+
+## Phase 4 — Create the monorepo and import histories
+
+- Local path: `/Users/jalillaaraichi/openwork-mcp-app-gallery-benchmark`
+- GitHub: https://github.com/reachjalil/openwork-mcp-app-gallery-benchmark
+- Visibility: public
+- Bootstrap `main` / initial `dev`: `e6a15ce397767373e94098f3f2182d44f431e9ba`
+- Default branch: `dev`
+- No `forward` branch
+- Subtree merges: SOL `16a4e091…`, FABLE `ff2be54d…`, GROK `1ee0a2bc…`
+- Tree equivalence before later edits: SOL 132, FABLE 168, GROK 157 files
+
+## Phase 5 and 6 — Operable monorepo, evidence, and scoring
+
+Root CI, comparison scripts, and assessment documents added on
+`migration/consolidate-gallery-candidates`. Local `ci:check` from each
+implementation prefix passed on 2026-08-21. Original-benchmark normalized
+scores: SOL 86.25, FABLE 91.25, GROK 72.50. Original verdicts unchanged.
 
 ## Later phases
 
-Filled as execution continues: monorepo creation, subtree import, CI and
-comparison documents, migration PR, Vercel takeover, production release, and
-source archival.
+Migration PR, Vercel takeover, production release, and source archival.

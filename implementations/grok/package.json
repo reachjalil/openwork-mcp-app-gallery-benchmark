@@ -31,6 +31,7 @@
     "sbom": "node scripts/generate-sbom.mjs",
     "scan:secrets": "node scripts/scan-secrets.mjs",
     "scan:boundary": "node scripts/scan-source-boundary.mjs",
+    "ci:check": "pnpm run release:check",
     "release:check": "pnpm install --frozen-lockfile && pnpm run audit:ci && pnpm run format:check && pnpm run lint && pnpm run typecheck && pnpm run build:vercel && pnpm run test:unit && pnpm run test:gateway && pnpm run test:contract && pnpm run test:browser && pnpm run verify:notices && pnpm run check:upstream && pnpm run check:vercel && pnpm run scan:secrets && pnpm run scan:boundary && pnpm run sbom"
   },
   "dependencies": {

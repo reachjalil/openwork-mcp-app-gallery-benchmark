@@ -1,8 +1,10 @@
 # Agent contract
 
-- `forward` is the default, integration, and only release branch. Every PR
-  targets `forward`; `main` and `dev` are not delivery branches. CI, CodeQL,
-  and the Vercel Production Branch all point at `forward`.
+- This tree is the imported FABLE candidate inside
+  `reachjalil/openwork-mcp-app-gallery-benchmark`. Monorepo pull requests
+  target `dev`; `main` is production-only. Historical source branch `forward`
+  is provenance only. Root comparison documents may assess this candidate
+  against SOL and GROK without changing this tree's runtime code.
 - Node 24.x + pnpm 10.28.0 (`corepack enable && pnpm install --frozen-lockfile`).
 - Run `pnpm release:check` before publishing a PR; it is the complete local
   release gate. Browser tests need `pnpm exec playwright install chromium`.

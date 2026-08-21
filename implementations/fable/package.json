@@ -26,6 +26,7 @@
     "check:source-boundary": "node scripts/check-source-boundary.mjs",
     "sbom": "node scripts/generate-sbom.mjs",
     "audit:ci": "pnpm audit --prod --audit-level high",
+    "ci:check": "pnpm run release:check",
     "release:check": "pnpm run format:check && pnpm run lint && pnpm run typecheck && pnpm run verify:notices && pnpm run check:source-boundary && pnpm run audit:ci && pnpm run test && pnpm run build:vercel && pnpm run check:vercel && pnpm run sbom && pnpm run test:browser"
   },
   "dependencies": {

@@ -6,9 +6,11 @@ Protocol service.
 
 ## Boundaries
 
-- Work only in this repository and its namespaced Vercel project
-  `openwork-mcp-app-gallery-grok`.
-- Do not inspect or modify sibling SOL or FABLE candidates.
+- This tree is the imported GROK candidate inside
+  `reachjalil/openwork-mcp-app-gallery-benchmark` and still deploys through
+  Vercel project `openwork-mcp-app-gallery-grok`.
+- Do not change sibling SOL or FABLE runtime trees to homogenize GROK.
+  Root comparison documents may assess all three candidates.
 - Do not modify OpenWork, Snacks, or OpenWork Lounge from this repository.
 - Do not fetch upstream `main` at build or runtime.
 - Do not spend on paid Vercel or GitHub capacity, custom domains, or DNS.
@@ -16,8 +18,9 @@ Protocol service.
 
 ## Delivery
 
-- Default and production branch: `forward`.
-- Feature work: `grok/gallery-v1` or another focused branch targeting `forward`.
+- Monorepo integration branch: `dev`. Production branch: `main`.
+- Feature work targets `dev`. Historical source branch `forward` and
+  `grok/gallery-v1` are provenance only.
 - Use pnpm 10.28.0 and Node.js 24.x.
 - Run `pnpm release:check` before merge.
-- Stage Production from the exact `forward` SHA, then promote without rebuild.
+- After the Vercel monorepo mapping, Production comes from exact `main`.

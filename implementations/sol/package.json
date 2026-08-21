@@ -37,6 +37,7 @@
     "scan:secrets": "tsx scripts/scan-secrets.ts",
     "audit:ci": "pnpm audit --audit-level=high && pnpm run scan:source && pnpm run scan:secrets && pnpm run generate:sbom",
     "release:check:ci": "pnpm run check:lockfile && pnpm run format/check && pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run test:browser && pnpm run verify:notices && pnpm run check:upstream && pnpm run check:vercel && pnpm run audit:ci && pnpm run build:vercel",
+    "ci:check": "pnpm run release:check:ci",
     "release:check": "pnpm run release:check:ci && vercel build --prod --yes"
   },
   "dependencies": {
