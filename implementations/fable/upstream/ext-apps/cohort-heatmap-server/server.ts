@@ -1,0 +1,220 @@
+// [gallery modification] Imports adapted for the hosted gallery: MCP SDK v2
+// (@modelcontextprotocol/server) replaces SDK v1, the gallery-owned adapter
+// replaces @modelcontextprotocol/ext-apps/server, and the UI HTML is read from
+// the immutable bundled resource store instead of the local filesystem.
+import type { McpServer, ReadResourceResult } from "@modelcontextprotocol/server";
+import { z } from "zod";
+import {
+  RESOURCE_MIME_TYPE,
+  registerAppResource,
+  registerAppTool,
+  readBundledAppHtml,
+} from "../../../src/mcp-app-adapter.js";
+
+// Schemas - types are derived from these using z.infer
+const GetCohortDataInputSchema = z.object({
+  metric: z
+    .enum(["retention", "revenue", "active"])
+    .optional()
+    .default("retention"),
+  periodType: z.enum(["monthly", "weekly"]).optional().default("monthly"),
+  cohortCount: z.number().min(3).max(24).optional().default(12),
+  maxPeriods: z.number().min(3).max(24).optional().default(12),
+});
+
+const CohortCellSchema = z.object({
+  cohortIndex: z.number(),
+  periodIndex: z.number(),
+  retention: z.number(),
+  usersRetained: z.number(),
+  usersOriginal: z.number(),
+});
+
+const CohortRowSchema = z.object({
+  cohortId: z.string(),
+  cohortLabel: z.string(),
+  originalUsers: z.number(),
+  cells: z.array(CohortCellSchema),
+});
+
+const CohortDataSchema = z.object({
+  cohorts: z.array(CohortRowSchema),
+  periods: z.array(z.string()),
+  periodLabels: z.array(z.string()),
+  metric: z.string(),
+  periodType: z.string(),
+  generatedAt: z.string(),
+});
+
+// Types derived from schemas
+type CohortCell = z.infer<typeof CohortCellSchema>;
+type CohortRow = z.infer<typeof CohortRowSchema>;
+type CohortData = z.infer<typeof CohortDataSchema>;
+
+// Internal types (not part of API schema)
+interface RetentionParams {
+  baseRetention: number;
+  decayRate: number;
+  floor: number;
+  noise: number;
+}
+
+// Retention curve generator using exponential decay
+function generateRetention(period: number, params: RetentionParams): number {
+  if (period === 0) return 1.0;
+
+  const { baseRetention, decayRate, floor, noise } = params;
+  const base = baseRetention * Math.exp(-decayRate * (period - 1)) + floor;
+  const variation = (Math.random() - 0.5) * 2 * noise;
+
+  return Math.max(0, Math.min(1, base + variation));
+}
+
+// Generate cohort data
+function generateCohortData(
+  metric: string,
+  periodType: string,
+  cohortCount: number,
+  maxPeriods: number,
+): CohortData {
+  const now = new Date();
+  const cohorts: CohortRow[] = [];
+  const periods: string[] = [];
+  const periodLabels: string[] = [];
+
+  // Generate period headers
+  for (let i = 0; i < maxPeriods; i++) {
+    periods.push(`M${i}`);
+    periodLabels.push(i === 0 ? "Month 0" : `Month ${i}`);
+  }
+
+  // Retention parameters vary by metric type
+  const paramsMap: Record<string, RetentionParams> = {
+    retention: {
+      baseRetention: 0.75,
+      decayRate: 0.12,
+      floor: 0.08,
+      noise: 0.04,
+    },
+    revenue: { baseRetention: 0.7, decayRate: 0.1, floor: 0.15, noise: 0.06 },
+    active: { baseRetention: 0.6, decayRate: 0.18, floor: 0.05, noise: 0.05 },
+  };
+  const params = paramsMap[metric] ?? paramsMap.retention;
+
+  // Generate cohorts (oldest first)
+  for (let c = 0; c < cohortCount; c++) {
+    const cohortDate = new Date(now);
+    cohortDate.setMonth(cohortDate.getMonth() - (cohortCount - 1 - c));
+
+    const cohortId = `${cohortDate.getFullYear()}-${String(cohortDate.getMonth() + 1).padStart(2, "0")}`;
+    const cohortLabel = cohortDate.toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    });
+
+    // Random cohort size: 1000-5000 users
+    const originalUsers = Math.floor(1000 + Math.random() * 4000);
+
+    // Number of periods this cohort has data for (newer cohorts have fewer periods)
+    const periodsAvailable = cohortCount - c;
+
+    const cells: CohortCell[] = [];
+    let previousRetention = 1.0;
+
+    for (let p = 0; p < Math.min(periodsAvailable, maxPeriods); p++) {
+      // Retention must decrease or stay same (with small exceptions for noise)
+      let retention = generateRetention(p, params);
+      retention = Math.min(retention, previousRetention + 0.02);
+      previousRetention = retention;
+
+      cells.push({
+        cohortIndex: c,
+        periodIndex: p,
+        retention,
+        usersRetained: Math.round(originalUsers * retention),
+        usersOriginal: originalUsers,
+      });
+    }
+
+    cohorts.push({ cohortId, cohortLabel, originalUsers, cells });
+  }
+
+  return {
+    cohorts,
+    periods,
+    periodLabels,
+    metric,
+    periodType,
+    generatedAt: new Date().toISOString(),
+  };
+}
+
+function formatCohortSummary(data: CohortData): string {
+  const avgRetention = data.cohorts
+    .flatMap((c) => c.cells)
+    .filter((cell) => cell.periodIndex > 0)
+    .reduce((sum, cell, _, arr) => sum + cell.retention / arr.length, 0);
+
+  return `Cohort Analysis: ${data.cohorts.length} cohorts, ${data.periods.length} periods
+Average retention: ${(avgRetention * 100).toFixed(1)}%
+Metric: ${data.metric}, Period: ${data.periodType}`;
+}
+
+/**
+ * [gallery modification] Upstream `createServer()` constructed its own SDK v1
+ * `McpServer`. The hosted gallery's handler constructs one SDK v2 server per
+ * request (carrying this example's name and version), so this function now
+ * receives that server and performs the same registrations on it.
+ */
+export function registerApp(server: McpServer): McpServer {
+  // Register tool and resource
+  const resourceUri = "ui://get-cohort-data/mcp-app.html";
+
+  registerAppTool(
+    server,
+    "get-cohort-data",
+    {
+      title: "Get Cohort Retention Data",
+      description:
+        "Returns cohort retention heatmap data showing customer retention over time by signup month",
+      inputSchema: GetCohortDataInputSchema.shape,
+      outputSchema: CohortDataSchema.shape,
+      _meta: { ui: { resourceUri } },
+    },
+    async ({ metric, periodType, cohortCount, maxPeriods }) => {
+      const data = generateCohortData(
+        metric,
+        periodType,
+        cohortCount,
+        maxPeriods,
+      );
+
+      return {
+        content: [{ type: "text", text: formatCohortSummary(data) }],
+        structuredContent: data,
+      };
+    },
+  );
+
+  registerAppResource(
+    server,
+    resourceUri,
+    resourceUri,
+    { mimeType: RESOURCE_MIME_TYPE },
+    async (): Promise<ReadResourceResult> => {
+      const html = readBundledAppHtml("cohort-heatmap");
+
+      return {
+        contents: [
+          {
+            uri: resourceUri,
+            mimeType: RESOURCE_MIME_TYPE,
+            text: html,
+          },
+        ],
+      };
+    },
+  );
+
+  return server;
+}

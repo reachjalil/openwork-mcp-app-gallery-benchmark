@@ -1,0 +1,29 @@
+name: Public readiness
+
+on:
+  pull_request:
+  push:
+    branches: [forward]
+
+permissions:
+  contents: read
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm verify:notices
+      - run: pnpm scan:secrets
+      - run: pnpm scan:boundary
+      - run: pnpm check:upstream
+      - run: test -f LICENSE && test -f THIRD_PARTY_NOTICES.md && test -f SECURITY.md

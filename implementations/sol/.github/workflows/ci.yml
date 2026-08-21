@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [forward]
+
+permissions:
+  contents: read
+
+jobs:
+  release-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm run release:check:ci
+
+  release-approval:
+    if: github.event_name == 'pull_request'
+    needs: release-check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Approve the exact tested head
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          observed_head="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" --jq .head.sha)"
+          test "$observed_head" = "$PR_HEAD"
+          gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/reviews" \
+            --method POST \
+            --field event=APPROVE \
+            --field commit_id="$PR_HEAD" \
+            --field body='Automated exact-head approval after the complete release check. CodeQL, dependency review, public readiness, Preview proof, signatures, and branch freshness remain independent merge gates.'

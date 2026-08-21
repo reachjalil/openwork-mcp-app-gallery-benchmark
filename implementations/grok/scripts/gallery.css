@@ -1,0 +1,89 @@
+:root {
+  color: #0f172a;
+  background: #f8fafc;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 1rem;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  padding: 0.5rem;
+}
+
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.copy,
+a {
+  color: #1d4ed8;
+}
+
+.copy {
+  background: #1d4ed8;
+  color: #fff;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  font: inherit;
+}
+
+.status {
+  min-height: 1.5rem;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1080px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,728 @@
+{
+  "schemaVersion": "1.0.0",
+  "modelName": "GROK",
+  "modelNamespace": "grok",
+  "startedAtUtc": "2026-08-17T16:43:02.012295Z",
+  "startedAtLocal": "2026-08-17T18:43:02.012295+02:00",
+  "startEpochMs": 1786984982012,
+  "completedAtUtc": "2026-08-17T18:40:00.000000Z",
+  "completedAtLocal": "2026-08-17T20:40:00.000000+02:00",
+  "completedEpochMs": 1786992000012,
+  "totalElapsedMs": 7018000,
+  "estimatedActiveMs": 3748000,
+  "externalWaitMs": 730000,
+  "ciWaitMs": 820000,
+  "vercelWaitMs": 320000,
+  "reworkMs": 1380000,
+  "currentPhase": "P9",
+  "finalVerdict": "Incomplete",
+  "milestones": [
+    {
+      "id": "clock-started",
+      "label": "Clock started",
+      "atUtc": "2026-08-17T16:43:02.012295Z",
+      "atLocal": "2026-08-17T18:43:02.012295+02:00",
+      "elapsedMs": 0
+    },
+    {
+      "id": "timeline-created",
+      "label": "Timeline files created",
+      "atUtc": "2026-08-17T16:43:02.012295Z",
+      "atLocal": "2026-08-17T18:43:02.012295+02:00",
+      "elapsedMs": 0
+    },
+    {
+      "id": "preflight-complete",
+      "label": "Preflight complete",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141
+    },
+    {
+      "id": "governance-forward",
+      "label": "Governance commit on forward",
+      "atUtc": "2026-08-17T16:49:32.000000Z",
+      "atLocal": "2026-08-17T18:49:32.000000+02:00",
+      "elapsedMs": 389988
+    },
+    {
+      "id": "six-app-catalog",
+      "label": "Six-app local contract suite green",
+      "atUtc": "2026-08-17T17:07:11.000000Z",
+      "atLocal": "2026-08-17T19:07:11.000000+02:00",
+      "elapsedMs": 1448988
+    },
+    {
+      "id": "browser-proof",
+      "label": "Browser and UI-to-tool proof",
+      "atUtc": "2026-08-17T17:11:33.000000Z",
+      "atLocal": "2026-08-17T19:11:33.000000+02:00",
+      "elapsedMs": 1710988
+    },
+    {
+      "id": "local-release-check",
+      "label": "First green local release:check",
+      "atUtc": "2026-08-17T17:13:57.121486Z",
+      "atLocal": "2026-08-17T19:13:57.121486+02:00",
+      "elapsedMs": 1855109
+    },
+    {
+      "id": "pr-open",
+      "label": "Implementation PR opened",
+      "atUtc": "2026-08-17T17:18:17.000000Z",
+      "atLocal": "2026-08-17T19:18:17.000000+02:00",
+      "elapsedMs": 2114988
+    },
+    {
+      "id": "first-preview-ready",
+      "label": "First Git-connected deployment READY",
+      "atUtc": "2026-08-17T17:18:48.000000Z",
+      "atLocal": "2026-08-17T19:18:48.000000+02:00",
+      "elapsedMs": 2145988
+    },
+    {
+      "id": "first-all-green-pr-head",
+      "label": "First all-green PR head",
+      "atUtc": "2026-08-17T17:50:03.000000Z",
+      "atLocal": "2026-08-17T19:50:03.000000+02:00",
+      "elapsedMs": 4020987
+    },
+    {
+      "id": "merge",
+      "label": "Merge into forward",
+      "atUtc": null,
+      "atLocal": null,
+      "elapsedMs": null,
+      "status": "Incomplete"
+    },
+    {
+      "id": "staged-observation-start",
+      "label": "Staged Production observation start (78a52fd)",
+      "atUtc": "2026-08-17T18:10:27.000000Z",
+      "atLocal": "2026-08-17T20:10:27.000000+02:00",
+      "elapsedMs": 5244987
+    },
+    {
+      "id": "production-promotion",
+      "label": "Production promotion",
+      "atUtc": "2026-08-17T18:30:30.000000Z",
+      "atLocal": "2026-08-17T20:30:30.000000+02:00",
+      "elapsedMs": 6447987
+    },
+    {
+      "id": "stable-origin-proof",
+      "label": "Stable-origin proof",
+      "atUtc": "2026-08-17T18:32:28.000000Z",
+      "atLocal": "2026-08-17T20:32:28.000000+02:00",
+      "elapsedMs": 6565987
+    }
+  ],
+  "phases": [
+    {
+      "id": "P0",
+      "name": "Preflight",
+      "startUtc": "2026-08-17T16:43:02.012295Z",
+      "endUtc": "2026-08-17T16:49:14.153613Z",
+      "durationMs": 372141,
+      "status": "Passed",
+      "dominantCategory": "Implementation"
+    },
+    {
+      "id": "P1",
+      "name": "Bootstrap",
+      "startUtc": "2026-08-17T16:49:14.153613Z",
+      "endUtc": "2026-08-17T16:49:32.000000Z",
+      "durationMs": 17846,
+      "status": "Passed",
+      "dominantCategory": "GitHub"
+    },
+    {
+      "id": "P2",
+      "name": "Implementation",
+      "startUtc": "2026-08-17T16:49:32.000000Z",
+      "endUtc": "2026-08-17T17:11:37.308705Z",
+      "durationMs": 1325308,
+      "status": "Passed",
+      "dominantCategory": "Implementation"
+    },
+    {
+      "id": "P3",
+      "name": "Local verification",
+      "startUtc": "2026-08-17T17:07:11.000000Z",
+      "endUtc": "2026-08-17T17:13:57.121486Z",
+      "durationMs": 406121,
+      "status": "Passed",
+      "dominantCategory": "Test"
+    },
+    {
+      "id": "P4",
+      "name": "Pull request and CI",
+      "startUtc": "2026-08-17T17:13:57.121486Z",
+      "endUtc": "2026-08-17T17:50:03.000000Z",
+      "durationMs": 2165878,
+      "status": "Passed",
+      "dominantCategory": "CI"
+    },
+    {
+      "id": "P5",
+      "name": "Preview",
+      "startUtc": "2026-08-17T17:18:19.000000Z",
+      "endUtc": "2026-08-17T17:50:03.000000Z",
+      "durationMs": 1904000,
+      "status": "Passed",
+      "dominantCategory": "Vercel"
+    },
+    {
+      "id": "P6",
+      "name": "Merge",
+      "startUtc": "2026-08-17T17:30:30.000000Z",
+      "endUtc": "2026-08-17T18:40:00.000000Z",
+      "durationMs": 4170000,
+      "status": "Incomplete",
+      "dominantCategory": "GitHub"
+    },
+    {
+      "id": "P7",
+      "name": "Staged production",
+      "startUtc": "2026-08-17T17:44:55.000000Z",
+      "endUtc": "2026-08-17T18:30:25.000000Z",
+      "durationMs": 2730000,
+      "status": "Passed",
+      "dominantCategory": "Vercel"
+    },
+    {
+      "id": "P8",
+      "name": "Promotion and stable origin",
+      "startUtc": "2026-08-17T18:30:25.000000Z",
+      "endUtc": "2026-08-17T18:33:00.000000Z",
+      "durationMs": 155000,
+      "status": "Passed",
+      "dominantCategory": "Vercel"
+    },
+    {
+      "id": "P9",
+      "name": "Reports and terminal gate",
+      "startUtc": "2026-08-17T18:33:00.000000Z",
+      "endUtc": "2026-08-17T18:40:00.000000Z",
+      "durationMs": 420000,
+      "status": "Passed",
+      "dominantCategory": "Implementation"
+    }
+  ],
+  "events": [
+    {
+      "id": "EVT-001",
+      "atUtc": "2026-08-17T16:43:02.012295Z",
+      "atLocal": "2026-08-17T18:43:02.012295+02:00",
+      "elapsedMs": 0,
+      "phase": "P0",
+      "category": "Implementation",
+      "event": "Recorded actual start time and created TIMELINE.md plus benchmark/timeline.json in the empty namespaced directory",
+      "result": "Started",
+      "related": "MODEL_NAME=GROK MODEL_NAMESPACE=grok"
+    },
+    {
+      "id": "EVT-002",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141,
+      "phase": "P0",
+      "category": "GitHub",
+      "event": "Verified gh authentication as reachjalil with repo, workflow, and org read scopes",
+      "result": "Passed",
+      "related": "login=reachjalil"
+    },
+    {
+      "id": "EVT-003",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141,
+      "phase": "P0",
+      "category": "GitHub",
+      "event": "Verified different-ai membership and repository creation permission",
+      "result": "Passed",
+      "related": "role=member members_can_create_private_repositories=true"
+    },
+    {
+      "id": "EVT-004",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141,
+      "phase": "P0",
+      "category": "GitHub",
+      "event": "Confirmed namespaced GitHub repository does not exist",
+      "result": "Passed",
+      "related": "different-ai/openwork-mcp-app-gallery-grok"
+    },
+    {
+      "id": "EVT-005",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141,
+      "phase": "P0",
+      "category": "Vercel",
+      "event": "Confirmed namespaced Vercel project is absent under authenticated teams",
+      "result": "Passed",
+      "related": "openwork-mcp-app-gallery-grok"
+    },
+    {
+      "id": "EVT-006",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141,
+      "phase": "P0",
+      "category": "GitHub",
+      "event": "Fetched authoritative different-ai/openwork-snacks:forward",
+      "result": "Passed",
+      "related": "sha=aef537a6118f1533d49810b7a245ff0c740054c2"
+    },
+    {
+      "id": "EVT-007",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141,
+      "phase": "P0",
+      "category": "Implementation",
+      "event": "Pinned-source license preflight for ext-apps at 10195ad91851502134930e9b80ec2c04e277a720",
+      "result": "Passed",
+      "related": "examples declare MIT; root LICENSE mixed Apache-2.0/MIT; gallery-owned Apache-2.0"
+    },
+    {
+      "id": "EVT-008",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141,
+      "phase": "P0",
+      "category": "Dependency",
+      "event": "Confirmed current mcp-handler 2.1.1 and @modelcontextprotocol/server 2.0.0",
+      "result": "Passed",
+      "related": "mcp-handler@2.1.1 inspected commit 7c8fe0a6d18e2fd112739360ff587cfcd31a1472"
+    },
+    {
+      "id": "EVT-009",
+      "atUtc": "2026-08-17T16:49:14.153613Z",
+      "atLocal": "2026-08-17T18:49:14.153613+02:00",
+      "elapsedMs": 372141,
+      "phase": "P0",
+      "category": "Implementation",
+      "event": "Closed P0 preflight and started P1 repository bootstrap",
+      "result": "Started",
+      "related": null
+    },
+    {
+      "id": "EVT-010",
+      "atUtc": "2026-08-17T16:49:32.000000Z",
+      "atLocal": "2026-08-17T18:49:32.000000+02:00",
+      "elapsedMs": 389988,
+      "phase": "P1",
+      "category": "GitHub",
+      "event": "Governance commit pushed; forward is default; grok/gallery-v1 created from that head",
+      "result": "Passed",
+      "related": "sha=6a006adfc1763e2cf8cdca9715d85faafd446bd1"
+    },
+    {
+      "id": "EVT-011",
+      "atUtc": "2026-08-17T17:07:11.000000Z",
+      "atLocal": "2026-08-17T19:07:11.000000+02:00",
+      "elapsedMs": 1448988,
+      "phase": "P2",
+      "category": "Test",
+      "event": "Six-app current-protocol and legacy contract plus gateway isolation tests green",
+      "result": "Passed",
+      "related": "33 vitest tests"
+    },
+    {
+      "id": "EVT-012",
+      "atUtc": "2026-08-17T17:08:00.000000Z",
+      "atLocal": "2026-08-17T19:08:00.000000+02:00",
+      "elapsedMs": 1497988,
+      "phase": "P2",
+      "category": "Implementation",
+      "event": "Built six deterministic single-file MCP App HTML resources",
+      "result": "Passed",
+      "related": "Vite 6.4.3 + vite-plugin-singlefile"
+    },
+    {
+      "id": "EVT-013",
+      "atUtc": "2026-08-17T17:11:33.000000Z",
+      "atLocal": "2026-08-17T19:11:33.000000+02:00",
+      "elapsedMs": 1710988,
+      "phase": "P3",
+      "category": "Test",
+      "event": "Playwright gallery, 320px, keyboard copy, and get-time UI-to-tool proof",
+      "result": "Passed",
+      "related": "2 browser tests"
+    },
+    {
+      "id": "EVT-014",
+      "atUtc": "2026-08-17T17:13:57.121486Z",
+      "atLocal": "2026-08-17T19:13:57.121486+02:00",
+      "elapsedMs": 1855109,
+      "phase": "P3",
+      "category": "Test",
+      "event": "Local pnpm release:check green",
+      "result": "Passed",
+      "related": "format lint typecheck build unit gateway contract browser notices architecture"
+    },
+    {
+      "id": "EVT-015",
+      "atUtc": "2026-08-17T17:18:17.000000Z",
+      "atLocal": "2026-08-17T19:18:17.000000+02:00",
+      "elapsedMs": 2114988,
+      "phase": "P4",
+      "category": "GitHub",
+      "event": "Opened implementation PR #1 targeting forward",
+      "result": "Passed",
+      "related": "https://github.com/different-ai/openwork-mcp-app-gallery-grok/pull/1"
+    },
+    {
+      "id": "EVT-016",
+      "atUtc": "2026-08-17T17:19:54.000000Z",
+      "atLocal": "2026-08-17T19:19:54.000000+02:00",
+      "elapsedMs": 2211988,
+      "phase": "P4",
+      "category": "CI",
+      "event": "Exact-head CI, CodeQL, dependency review, and public-readiness green for 2602b08",
+      "result": "Passed",
+      "related": "sha=2602b08e2d21b013036cbd28ba831cd69940ae1c"
+    },
+    {
+      "id": "EVT-017",
+      "atUtc": "2026-08-17T17:20:20.000000Z",
+      "atLocal": "2026-08-17T19:20:20.000000+02:00",
+      "elapsedMs": 2237988,
+      "phase": "P5",
+      "category": "Vercel",
+      "event": "First Git deployment READY but GET / returned 404 while /index.html was 200",
+      "result": "Failed",
+      "related": "ISS-004 REG-001"
+    },
+    {
+      "id": "EVT-018",
+      "atUtc": "2026-08-17T17:22:19.000000Z",
+      "atLocal": "2026-08-17T19:22:19.000000+02:00",
+      "elapsedMs": 2356988,
+      "phase": "P5",
+      "category": "Vercel",
+      "event": "Rewrite-only Preview still 404 at / because the Hono Function owns slash routes",
+      "result": "Failed",
+      "related": "dpl_AfFirHK59znEWa7Drfo2nnLYuLdC"
+    },
+    {
+      "id": "EVT-019",
+      "atUtc": "2026-08-17T17:25:29.147429Z",
+      "atLocal": "2026-08-17T19:25:29.147429+02:00",
+      "elapsedMs": 2547135,
+      "phase": "P5",
+      "category": "Implementation",
+      "event": "Function now serves GET / from bundled generated/gallery.html",
+      "result": "Passed",
+      "related": "local gateway and browser tests green"
+    },
+    {
+      "id": "EVT-020",
+      "atUtc": "2026-08-17T17:26:23.000000Z",
+      "atLocal": "2026-08-17T19:26:23.000000+02:00",
+      "elapsedMs": 2600988,
+      "phase": "P5",
+      "category": "Vercel",
+      "event": "Function-served Preview GET / 200",
+      "result": "Passed",
+      "related": "sha=8564e3c7482543c959d13fbc4edbe7009879dd81"
+    },
+    {
+      "id": "EVT-021",
+      "atUtc": "2026-08-17T17:30:30.000000Z",
+      "atLocal": "2026-08-17T19:30:30.000000+02:00",
+      "elapsedMs": 2847988,
+      "phase": "P6",
+      "category": "GitHub",
+      "event": "First squash-merge attempt blocked by org last-push approval",
+      "result": "Failed",
+      "related": "ISS-005"
+    },
+    {
+      "id": "EVT-022",
+      "atUtc": "2026-08-17T17:38:08.000000Z",
+      "atLocal": "2026-08-17T19:38:08.000000+02:00",
+      "elapsedMs": 3305988,
+      "phase": "P4",
+      "category": "CI",
+      "event": "Uploaded CodeQL SARIF so org default-branch scanning can see results",
+      "result": "Passed",
+      "related": "sha=3bf21433467296b0527820295f9d6c5c3b68db49"
+    },
+    {
+      "id": "EVT-023",
+      "atUtc": "2026-08-17T17:44:55.000000Z",
+      "atLocal": "2026-08-17T19:44:55.000000+02:00",
+      "elapsedMs": 3712987,
+      "phase": "P7",
+      "category": "Vercel",
+      "event": "First Production-config staged deployment READY",
+      "result": "Passed",
+      "related": "dpl_CgMPKy5ZNMNz455QKGCaZAYGLRV8"
+    },
+    {
+      "id": "EVT-024",
+      "atUtc": "2026-08-17T17:48:26.000000Z",
+      "atLocal": "2026-08-17T19:48:26.000000+02:00",
+      "elapsedMs": 3923987,
+      "phase": "P7",
+      "category": "Vercel",
+      "event": "Started 20-minute staged observation on 3bf2143",
+      "result": "Started",
+      "related": null
+    },
+    {
+      "id": "EVT-025",
+      "atUtc": "2026-08-17T17:48:27.000000Z",
+      "atLocal": "2026-08-17T19:48:27.000000+02:00",
+      "elapsedMs": 3924987,
+      "phase": "P4",
+      "category": "Implementation",
+      "event": "Cleared CodeQL high alerts in customer-segmentation synthetic data path",
+      "result": "Passed",
+      "related": "ISS-006 sha=78a52fd9defc0d9855021b283191d46b86505ca1"
+    },
+    {
+      "id": "EVT-026",
+      "atUtc": "2026-08-17T17:50:03.000000Z",
+      "atLocal": "2026-08-17T19:50:03.000000+02:00",
+      "elapsedMs": 4020987,
+      "phase": "P4",
+      "category": "CI",
+      "event": "Exact-head CI, CodeQL, dependency review, public-readiness, and Vercel green for 78a52fd",
+      "result": "Passed",
+      "related": "first all-green PR head"
+    },
+    {
+      "id": "EVT-027",
+      "atUtc": "2026-08-17T18:08:26.000000Z",
+      "atLocal": "2026-08-17T20:08:26.000000+02:00",
+      "elapsedMs": 5123987,
+      "phase": "P7",
+      "category": "Vercel",
+      "event": "20-minute staged observation on 3bf2143 completed with 0 failures",
+      "result": "Passed",
+      "related": "55 cycles"
+    },
+    {
+      "id": "EVT-028",
+      "atUtc": "2026-08-17T18:09:38.000000Z",
+      "atLocal": "2026-08-17T20:09:38.000000+02:00",
+      "elapsedMs": 5195987,
+      "phase": "P7",
+      "category": "Vercel",
+      "event": "Staged Production deployment built from 78a52fd without assigning production domains",
+      "result": "Passed",
+      "related": "dpl_3wYhaLSwRBT3yGaChJjh1ozynmWY"
+    },
+    {
+      "id": "EVT-029",
+      "atUtc": "2026-08-17T18:10:27.000000Z",
+      "atLocal": "2026-08-17T20:10:27.000000+02:00",
+      "elapsedMs": 5244987,
+      "phase": "P7",
+      "category": "Vercel",
+      "event": "Started 20-minute staged observation on 78a52fd",
+      "result": "Started",
+      "related": null
+    },
+    {
+      "id": "EVT-030",
+      "atUtc": "2026-08-17T18:30:25.000000Z",
+      "atLocal": "2026-08-17T20:30:25.000000+02:00",
+      "elapsedMs": 6442987,
+      "phase": "P7",
+      "category": "Vercel",
+      "event": "20-minute staged observation on 78a52fd completed with 0 failures",
+      "result": "Passed",
+      "related": "55 cycles"
+    },
+    {
+      "id": "EVT-031",
+      "atUtc": "2026-08-17T18:30:30.000000Z",
+      "atLocal": "2026-08-17T20:30:30.000000+02:00",
+      "elapsedMs": 6447987,
+      "phase": "P8",
+      "category": "Vercel",
+      "event": "Promoted exact staged deployment without rebuild",
+      "result": "Passed",
+      "related": "dpl_3wYhaLSwRBT3yGaChJjh1ozynmWY"
+    },
+    {
+      "id": "EVT-032",
+      "atUtc": "2026-08-17T18:32:28.000000Z",
+      "atLocal": "2026-08-17T20:32:28.000000+02:00",
+      "elapsedMs": 6565987,
+      "phase": "P8",
+      "category": "Test",
+      "event": "Stable-origin current and legacy protocol matrices plus HTTP negatives green",
+      "result": "Passed",
+      "related": "all six slugs"
+    },
+    {
+      "id": "EVT-033",
+      "atUtc": "2026-08-17T18:32:40.000000Z",
+      "atLocal": "2026-08-17T20:32:40.000000+02:00",
+      "elapsedMs": 6577987,
+      "phase": "P6",
+      "category": "GitHub",
+      "event": "Repeat squash-merge still blocked",
+      "result": "Incomplete",
+      "related": "ISS-005"
+    },
+    {
+      "id": "EVT-034",
+      "atUtc": "2026-08-17T18:33:20.000000Z",
+      "atLocal": "2026-08-17T20:33:20.000000+02:00",
+      "elapsedMs": 6617987,
+      "phase": "P8",
+      "category": "Test",
+      "event": "Installed OpenWork reachable; UI-control has no add-remote-MCP action",
+      "result": "Incomplete",
+      "related": "OpenWork deep MCP Apps path"
+    },
+    {
+      "id": "EVT-035",
+      "atUtc": "2026-08-17T18:35:52.000000Z",
+      "atLocal": "2026-08-17T20:35:52.000000+02:00",
+      "elapsedMs": 6769987,
+      "phase": "P8",
+      "category": "Test",
+      "event": "MCP Inspector connected to production get-time",
+      "result": "Passed",
+      "related": "independent host 2.2.0"
+    },
+    {
+      "id": "EVT-036",
+      "atUtc": "2026-08-17T18:36:40.000000Z",
+      "atLocal": "2026-08-17T20:36:40.000000+02:00",
+      "elapsedMs": 6817987,
+      "phase": "P8",
+      "category": "Test",
+      "event": "MCP Inspector app-info true for all six production endpoints",
+      "result": "Passed",
+      "related": "independent host"
+    }
+  ],
+  "issues": [
+    {
+      "id": "ISS-001",
+      "firstObservedUtc": "2026-08-17T17:08:00.000000Z",
+      "firstObservedElapsedMs": 1497988,
+      "resolvedUtc": "2026-08-17T17:09:01.000000Z",
+      "resolvedElapsedMs": 1558988,
+      "phase": "P2",
+      "classification": "implementation",
+      "origin": "exposed-by-run",
+      "expected": "App HTML resources at or below the plan's initial 512 KiB ceiling",
+      "observed": "Official single-file React MCP Apps were 528-739 KiB after production minify",
+      "status": "Accepted deviation"
+    },
+    {
+      "id": "ISS-002",
+      "firstObservedUtc": "2026-08-17T17:01:46.000000Z",
+      "firstObservedElapsedMs": 1123988,
+      "resolvedUtc": "2026-08-17T17:07:11.000000Z",
+      "resolvedElapsedMs": 1448988,
+      "phase": "P2",
+      "classification": "test",
+      "origin": "self-introduced",
+      "expected": "2026-07-28 tools/list and tools/call succeed",
+      "observed": "400 because Mcp-Method was absent",
+      "status": "Corrected"
+    },
+    {
+      "id": "ISS-003",
+      "firstObservedUtc": "2026-08-17T17:09:30.000000Z",
+      "firstObservedElapsedMs": 1587988,
+      "resolvedUtc": "2026-08-17T17:09:45.000000Z",
+      "resolvedElapsedMs": 1602988,
+      "phase": "P3",
+      "classification": "test",
+      "origin": "self-introduced",
+      "expected": "Notice verifier hashes copied upstream files",
+      "observed": "digest mismatch for grid-cell.png",
+      "status": "Corrected"
+    },
+    {
+      "id": "ISS-004",
+      "firstObservedUtc": "2026-08-17T17:20:20.000000Z",
+      "firstObservedElapsedMs": 2237988,
+      "resolvedUtc": "2026-08-17T17:26:23.000000Z",
+      "resolvedElapsedMs": 2600988,
+      "phase": "P5",
+      "classification": "Vercel",
+      "origin": "self-introduced",
+      "expected": "GET / serves the gallery landing page",
+      "observed": "GET / returned 404 while /index.html returned 200",
+      "status": "Corrected"
+    },
+    {
+      "id": "ISS-005",
+      "firstObservedUtc": "2026-08-17T17:30:30.000000Z",
+      "firstObservedElapsedMs": 2847988,
+      "resolvedUtc": null,
+      "resolvedElapsedMs": null,
+      "phase": "P6",
+      "classification": "GitHub",
+      "origin": "pre-existing",
+      "expected": "Merge the green namespaced PR into forward after exact-head gates",
+      "observed": "Org ruleset Protected default branches requires non-author last-push approval",
+      "status": "Incomplete"
+    },
+    {
+      "id": "ISS-006",
+      "firstObservedUtc": "2026-08-17T17:46:01.000000Z",
+      "firstObservedElapsedMs": 3778987,
+      "resolvedUtc": "2026-08-17T17:50:03.000000Z",
+      "resolvedElapsedMs": 4020987,
+      "phase": "P4",
+      "classification": "CI",
+      "origin": "exposed-by-run",
+      "expected": "CodeQL security check success on the PR head",
+      "observed": "High alerts on copied customer-segmentation synthetic Math.random",
+      "status": "Corrected"
+    }
+  ],
+  "regressions": [
+    {
+      "id": "REG-001",
+      "issueId": "ISS-004",
+      "introduced": "2602b08e2d21b013036cbd28ba831cd69940ae1c",
+      "detectedUtc": "2026-08-17T17:20:20.000000Z",
+      "correctedUtc": "2026-08-17T17:26:23.000000Z",
+      "corrected": "8564e3c7482543c959d13fbc4edbe7009879dd81",
+      "symptom": "gallery / 404 on Vercel while Function routes worked",
+      "status": "Corrected"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "dpl_CgMPKy5ZNMNz455QKGCaZAYGLRV8",
+      "environment": "production-staged",
+      "sha": "3bf21433467296b0527820295f9d6c5c3b68db49",
+      "atUtc": "2026-08-17T17:44:55.000000Z",
+      "result": "20-minute observation Passed"
+    },
+    {
+      "id": "dpl_h8acBzjx6jZTnf32oRzMVNiihFVU",
+      "environment": "preview",
+      "sha": "78a52fd9defc0d9855021b283191d46b86505ca1",
+      "atUtc": "2026-08-17T17:48:32.000000Z",
+      "url": "https://openwork-mcp-app-gallery-grok-git-grok-gallery-v1-prologe.vercel.app",
+      "result": "Exact PR-head Preview READY"
+    },
+    {
+      "id": "dpl_3wYhaLSwRBT3yGaChJjh1ozynmWY",
+      "environment": "production",
+      "sha": "78a52fd9defc0d9855021b283191d46b86505ca1",
+      "atUtc": "2026-08-17T18:09:38.000000Z",
+      "promotedUtc": "2026-08-17T18:30:30.000000Z",
+      "url": "https://openwork-mcp-app-gallery-grok.vercel.app",
+      "result": "Promoted after 20-minute observation"
+    }
+  ]
+}
