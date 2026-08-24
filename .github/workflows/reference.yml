@@ -1,0 +1,64 @@
+name: Reference
+
+# The three benchmark candidate trees under reference/ are frozen evidence.
+# Their full gates and the comparison drift-check run only when something
+# under reference/ actually changes, keeping ordinary gallery PRs fast.
+
+on:
+  pull_request:
+    paths:
+      - "reference/**"
+      - ".github/workflows/reference.yml"
+  push:
+    branches: [dev, main]
+    paths:
+      - "reference/**"
+      - ".github/workflows/reference.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    name: ${{ matrix.candidate }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        candidate: [sol, fable, grok]
+    defaults:
+      run:
+        working-directory: reference/${{ matrix.candidate }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: reference/${{ matrix.candidate }}/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm run ci:check
+
+  comparison:
+    name: comparison
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node reference/scripts/validate-results.mjs
+      - run: node reference/scripts/build-comparison.mjs
+      - run: node reference/scripts/build-scorecard.mjs
+      - run: node reference/scripts/verify-source-manifest.mjs
+      - name: Fail when generated files drift
+        run: git diff --exit-code -- reference/data/combined-result.json reference/docs/assessment/scorecard.md

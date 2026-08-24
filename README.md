@@ -1,64 +1,100 @@
-# OpenWork MCP Apps gallery
+# MCP Apps Example Gallery
 
-Personal monorepo for one hosted MCP Apps gallery plus the three August 17
-benchmark implementations kept as references.
+**Live gallery: <https://openwork-mcp-app-gallery.vercel.app>**
 
-This is not an official Model Context Protocol service. Each tree is an
-independent adaptation of official examples.
+Six official [Model Context Protocol MCP Apps examples](https://github.com/modelcontextprotocol/ext-apps),
+hosted as remote MCP servers you can try by URL — and a working, fully tested
+codebase you can copy to build and host **your own** MCP Apps.
 
-## Active gallery
+> An **MCP App** is an MCP tool that also ships an interactive UI: when a
+> compatible host (OpenWork, Claude, …) calls the tool, it renders the app's
+> HTML inside the conversation, and the app can talk back to its server. Hosts
+> without MCP Apps support still get an ordinary text/structured result.
 
-`implementations/gallery` is the single implementation to deploy. It takes
-FABLE as the runtime base and ports the small GROK and SOL wins documented
-in `implementations/gallery/SELECTION.md` and
-`docs/assessment/canonical-selection.md`.
+**→ Want to build one? Start with the guide: [docs/building-mcp-apps.md](docs/building-mcp-apps.md)**
 
-## Reference implementations
+## Try it in two minutes
 
-| Candidate | Path | Historical origin | Original verdict |
-| --- | --- | --- | --- |
-| SOL | `implementations/sol` | https://openwork-mcp-app-gallery-sol.vercel.app | Passed |
-| FABLE | `implementations/fable` | https://openwork-mcp-app-gallery-fable.vercel.app | Passed |
-| GROK | `implementations/grok` | https://openwork-mcp-app-gallery-grok.vercel.app | Incomplete |
+1. Copy an endpoint (or use **Copy MCP URL** on the [gallery page](https://openwork-mcp-app-gallery.vercel.app)):
 
-The original GROK verdict remains `Incomplete` because the historical PR did
-not merge into `forward` during the August 17 benchmark window. Those three
-trees stay as references and are not the production gallery.
+   ```
+   https://openwork-mcp-app-gallery.vercel.app/apps/budget-allocator/mcp
+   ```
 
-## Branches
+2. Add it as a remote MCP server in your host (Claude: Settings → Connectors →
+   Add custom connector, auth **None**; OpenWork: Library → MCPs → Add
+   workspace MCP).
+3. Prompt: *“Create a $1 million seed-stage budget I can adjust interactively.”*
+4. An interactive budget panel renders — drag the sliders and watch it
+   recalculate.
 
-- `dev` — default integration branch and Vercel Preview source
-- `main` — production-only source
+| App | Endpoint path | Try this prompt |
+| --- | --- | --- |
+| Get Time | `/apps/get-time/mcp` | Show me the current server time using the interactive app. |
+| Budget Allocator | `/apps/budget-allocator/mcp` | Create a $1 million seed-stage budget I can adjust interactively. |
+| Cohort Heatmap | `/apps/cohort-heatmap/mcp` | Show me an interactive customer-retention cohort heatmap. |
+| Customer Segmentation | `/apps/customer-segmentation/mcp` | Let me explore customers by revenue and engagement. |
+| Scenario Modeler | `/apps/scenario-modeler/mcp` | Compare a bootstrapped plan with a venture-funded growth plan. |
+| Transcript | `/apps/transcript/mcp` | Open a live speech transcription app I can dictate into. |
 
-There is no `forward` branch in this repository.
+Non-MCP routes: `/` (gallery page) · `/apps.json` (machine manifest) ·
+`/healthz` · `/readyz` · `/version`.
 
-## Local checks
+## What this repo demonstrates
 
-Use Node.js 24.x and pnpm 10.28.0. Implementations are independent; there is
-no root workspace.
+- **The MCP Apps contract end to end** — tool + `ui://` resource +
+  `text/html;profile=mcp-app` + the App bridge, on both the current
+  `2026-07-28` protocol revision and the 2025-era Streamable HTTP flow that
+  today's hosts use.
+- **One server per app, one origin** — a path-routed gateway
+  (`/apps/:slug/mcp`) mounts each example as its own isolated MCP server:
+  no tool-name collisions, no cross-app state, no mega-catalog.
+- **Safe anonymous hosting** — request/response/time/concurrency ceilings,
+  origin policy, edge rate limiting, sanitized logs, no accounts, no
+  persistence, no server-side egress.
+- **A real verification bar** — 96 unit/gateway/protocol-contract tests plus
+  15 real-browser tests that render every app through the official test host,
+  provenance/digest verification for every borrowed upstream file, CodeQL,
+  SBOM, and a deployment canary suite.
+
+## Run it locally
+
+Requires Node 24.x and pnpm 10.28.0 (via corepack):
 
 ```bash
-pnpm run check:gallery
-pnpm run check:sol
-pnpm run check:fable
-pnpm run check:grok
-pnpm run check:all
-pnpm run benchmark:validate
-pnpm run benchmark:compare
-pnpm run benchmark:score
+corepack enable
+pnpm install --frozen-lockfile
+pnpm dev            # builds the app UIs + gallery site, serves on :3000
 ```
 
-## Documentation
+Full release gate (what CI runs):
 
-- Experiment brief: `docs/experiment/`
-- Findings: `docs/findings/`
-- Performance: `docs/performance/`
-- Assessment and scores: `docs/assessment/`
-- Canonical selection: `docs/assessment/canonical-selection.md`
-- Import provenance: `docs/migration/`
+```bash
+pnpm exec playwright install chromium
+pnpm run ci:check
+```
 
-## Deployment
+## Repository layout
 
-Deploy one Vercel project with Root Directory `implementations/gallery`,
-Production Branch `main`, and Preview Branch `dev`. The three historical
-origins are references only.
+```
+app.ts, src/          the gallery server (Hono + mcp-handler 2 / MCP SDK v2)
+upstream/ext-apps/    the six examples, pinned to an audited upstream commit
+                      (per-file provenance in upstream/manifest.json)
+public/, site-src/    the gallery page (served from the CDN + function)
+tests/                unit / gateway / protocol-contract / browser suites
+scripts/              build, canary, provenance, and architecture checks
+docs/                 the build-your-own-MCP-app guide
+reference/            how this gallery was chosen: three complete candidate
+                      implementations (sol, fable, grok) with benchmark
+                      findings, scorecards, and receipts — see reference/README.md
+```
+
+## Attribution and license
+
+This gallery is an **independent hosted adaptation** of the official examples
+from `modelcontextprotocol/ext-apps`, pinned at commit
+[`10195ad9`](https://github.com/modelcontextprotocol/ext-apps/commit/10195ad91851502134930e9b80ec2c04e277a720).
+It is not hosted or endorsed by the Model Context Protocol project.
+Repository code is Apache-2.0 (`LICENSE`); adapted upstream example code keeps
+its own notices (`THIRD_PARTY_NOTICES.md`, `upstream/manifest.json`). Demo
+service — no accounts, no stored data, no SLA.

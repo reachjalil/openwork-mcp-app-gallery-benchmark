@@ -10,8 +10,8 @@ under that project's own licensing (MIT at the pinned commit, amid an
 MIT-to-Apache-2.0 transition). Per-file provenance, digests, and local
 modifications are recorded in each tree:
 
-- `implementations/gallery/THIRD_PARTY_NOTICES.md` and `implementations/gallery/upstream/manifest.json`
-- `implementations/{sol,fable,grok}/THIRD_PARTY_NOTICES.md` and their `upstream/manifest.json`
+- `THIRD_PARTY_NOTICES.md` and `upstream/manifest.json` (the deployed gallery, at the repository root)
+- `reference/{sol,fable,grok}/THIRD_PARTY_NOTICES.md` and their `upstream/manifest.json`
 
 This project is an independent adaptation of official Model Context Protocol
 examples. It is not hosted or endorsed by the Model Context Protocol project.

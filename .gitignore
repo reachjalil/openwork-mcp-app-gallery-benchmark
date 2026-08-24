@@ -17,3 +17,5 @@ dist/
 blob-report/
 .idea/
 .vscode/
+/generated/
+/upstream/ext-apps/*/dist/
