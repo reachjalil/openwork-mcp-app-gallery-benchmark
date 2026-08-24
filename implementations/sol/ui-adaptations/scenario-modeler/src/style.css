@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light dark;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--color-text-primary, #142536);
+}
+body {
+  margin: 0;
+}
+main {
+  padding: 18px;
+  background: var(--color-background-primary, #fff);
+  border: 1px solid var(--color-border-secondary, #d3dcdf);
+  border-radius: 18px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+}
+.kicker {
+  margin: 0 0 6px;
+  color: #ef6a4c;
+  font:
+    700 10px ui-monospace,
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+h1 {
+  margin: 0;
+  font:
+    800 28px Georgia,
+    serif;
+}
+select {
+  min-height: 38px;
+  border: 1px solid #aebdc4;
+  border-radius: 9px;
+  background: var(--color-background-secondary, #f1f4f3);
+  color: inherit;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.7fr) 1.3fr;
+  gap: 18px;
+  margin-top: 20px;
+}
+form {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--color-background-secondary, #f1f4f3);
+}
+label {
+  font-size: 12px;
+  font-weight: 700;
+}
+label output {
+  float: right;
+  color: #0b5f7a;
+}
+input {
+  width: 100%;
+  accent-color: #0b5f7a;
+}
+button {
+  border: 0;
+  border-radius: 999px;
+  background: #0b5f7a;
+  color: #fff;
+  padding: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #ffb000;
+  outline-offset: 2px;
+}
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.summary article {
+  padding: 10px;
+  border: 1px solid #d3dcdf;
+  border-radius: 10px;
+}
+.summary span {
+  display: block;
+  font-size: 10px;
+  color: var(--color-text-secondary, #53697d);
+}
+.summary strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+}
+svg {
+  width: 100%;
+  height: auto;
+  margin-top: 12px;
+  background: var(--color-background-secondary, #f1f4f3);
+  border-radius: 12px;
+}
+svg line {
+  stroke: #8ba0aa;
+}
+svg polyline {
+  fill: none;
+  stroke: #0b5f7a;
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+svg text {
+  fill: currentColor;
+  font-size: 11px;
+}
+#status {
+  min-height: 1.2em;
+  font-size: 12px;
+  color: var(--color-text-secondary, #53697d);
+}
+@media (max-width: 620px) {
+  header {
+    display: block;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  select {
+    margin-top: 12px;
+    width: 100%;
+  }
+}

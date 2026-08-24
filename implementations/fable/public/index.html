@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MCP Apps Example Gallery</title>
+  <meta
+    name="description"
+    content="Hosted, copy-paste-ready remote MCP servers for the official Model Context Protocol MCP Apps examples. Independent adaptation; not an official MCP service."
+  />
+  <link rel="stylesheet" href="/assets/styles.aa1ae07ced9e.css" />
+</head>
+<body>
+  <a class="skip-link" href="#apps">Skip to the app list</a>
+  <header>
+    <h1>MCP Apps Example Gallery</h1>
+    <p>
+      Six official
+      <a href="https://github.com/modelcontextprotocol/ext-apps">MCP Apps examples</a>,
+      hosted as remote Streamable HTTP MCP servers you can try by URL —
+      no cloning, no <code>npx</code>, no tunnel.
+    </p>
+    <p class="disclaimer">
+      This gallery is an <strong>independent hosted adaptation</strong> of the
+      official examples (pinned at commit
+      <code>10195ad91851</code>). It is not an
+      official Model Context Protocol service and is not hosted or endorsed by
+      the Model Context Protocol project. Demo service only — no accounts, no
+      stored data, no SLA.
+    </p>
+  </header>
+  <main>
+    <section aria-labelledby="how-to">
+      <h2 id="how-to">Try an example in under five minutes</h2>
+      <ol>
+        <li>Pick an app below and press <strong>Copy MCP URL</strong>.</li>
+        <li>
+          Add the URL as a remote MCP server in an MCP Apps-compatible host —
+          in OpenWork, add it as a user-configured MCP server; other hosts have
+          an equivalent "add remote MCP server" flow.
+        </li>
+        <li>Send the app's sample prompt and interact with the UI that renders in the conversation.</li>
+      </ol>
+      <p>
+        Hosts without MCP Apps support still work: every tool returns an
+        ordinary text or structured result as fallback.
+      </p>
+    </section>
+    <section id="apps" aria-labelledby="apps-heading">
+      <h2 id="apps-heading">Apps</h2>
+      <div class="cards">
+      <article class="card" aria-labelledby="title-get-time">
+        <img
+          class="card-screenshot"
+          src="/screenshots/get-time.png"
+          alt="Screenshot of the Get Time MCP App user interface (upstream project screenshot at the pinned revision)"
+          loading="lazy"
+          width="640"
+          height="400"
+        />
+        <div class="card-body">
+          <h3 id="title-get-time">Get Time</h3>
+          <p class="card-interaction">starter</p>
+          <p>The smallest complete MCP App: an interactive card that shows the current server time with a UI-triggered refresh.</p>
+          <p class="card-note">Live server clock only; no external data and no stored state.</p>
+          <p class="card-prompt">
+            Try: <code>Show me the current server time using the interactive app.</code>
+          </p>
+          <p class="card-endpoint">
+            <span class="endpoint-label" id="endpoint-label-get-time">MCP endpoint</span>
+            <code class="endpoint-url" data-endpoint data-path="/apps/get-time/mcp">/apps/get-time/mcp</code>
+          </p>
+          <p class="card-actions">
+            <button
+              type="button"
+              class="copy-button"
+              data-path="/apps/get-time/mcp"
+              aria-describedby="endpoint-label-get-time"
+            >Copy MCP URL</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </p>
+          <p class="card-meta">
+            Source:
+            <a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/basic-server-react">upstream basic-server-react</a>
+            @ <code>10195ad91851</code>
+          </p>
+          <p class="card-meta">
+            Compatibility: production-verified 2026-08-17 · build
+            <code class="build-label" data-build-label>see <a href="/version">/version</a></code>
+          </p>
+        </div>
+      </article>
+      <article class="card" aria-labelledby="title-budget-allocator">
+        <img
+          class="card-screenshot"
+          src="/screenshots/budget-allocator.png"
+          alt="Screenshot of the Budget Allocator MCP App user interface (upstream project screenshot at the pinned revision)"
+          loading="lazy"
+          width="640"
+          height="400"
+        />
+        <div class="card-body">
+          <h3 id="title-budget-allocator">Budget Allocator</h3>
+          <p class="card-interaction">form + charts</p>
+          <p>An editable startup budget with sliders, charts, historical trends, and stage benchmarks that recalculates as you adjust it.</p>
+          <p class="card-note">Synthetic demo data generated on the server; nothing is persisted.</p>
+          <p class="card-prompt">
+            Try: <code>Create a $1 million seed-stage budget I can adjust interactively.</code>
+          </p>
+          <p class="card-endpoint">
+            <span class="endpoint-label" id="endpoint-label-budget-allocator">MCP endpoint</span>
+            <code class="endpoint-url" data-endpoint data-path="/apps/budget-allocator/mcp">/apps/budget-allocator/mcp</code>
+          </p>
+          <p class="card-actions">
+            <button
+              type="button"
+              class="copy-button"
+              data-path="/apps/budget-allocator/mcp"
+              aria-describedby="endpoint-label-budget-allocator"
+            >Copy MCP URL</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </p>
+          <p class="card-meta">
+            Source:
+            <a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/budget-allocator-server">upstream budget-allocator-server</a>
+            @ <code>10195ad91851</code>
+          </p>
+          <p class="card-meta">
+            Compatibility: production-verified 2026-08-17 · build
+            <code class="build-label" data-build-label>see <a href="/version">/version</a></code>
+          </p>
+        </div>
+      </article>
+      <article class="card" aria-labelledby="title-cohort-heatmap">
+        <img
+          class="card-screenshot"
+          src="/screenshots/cohort-heatmap.png"
+          alt="Screenshot of the Cohort Heatmap MCP App user interface (upstream project screenshot at the pinned revision)"
+          loading="lazy"
+          width="640"
+          height="400"
+        />
+        <div class="card-body">
+          <h3 id="title-cohort-heatmap">Cohort Heatmap</h3>
+          <p class="card-interaction">data visualization</p>
+          <p>A dense interactive customer-retention heatmap over synthetic monthly cohorts with metric and period controls.</p>
+          <p class="card-note">Synthetic demo data regenerated per request; bounded cohort and period counts.</p>
+          <p class="card-prompt">
+            Try: <code>Show me an interactive customer-retention cohort heatmap.</code>
+          </p>
+          <p class="card-endpoint">
+            <span class="endpoint-label" id="endpoint-label-cohort-heatmap">MCP endpoint</span>
+            <code class="endpoint-url" data-endpoint data-path="/apps/cohort-heatmap/mcp">/apps/cohort-heatmap/mcp</code>
+          </p>
+          <p class="card-actions">
+            <button
+              type="button"
+              class="copy-button"
+              data-path="/apps/cohort-heatmap/mcp"
+              aria-describedby="endpoint-label-cohort-heatmap"
+            >Copy MCP URL</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </p>
+          <p class="card-meta">
+            Source:
+            <a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/cohort-heatmap-server">upstream cohort-heatmap-server</a>
+            @ <code>10195ad91851</code>
+          </p>
+          <p class="card-meta">
+            Compatibility: production-verified 2026-08-17 · build
+            <code class="build-label" data-build-label>see <a href="/version">/version</a></code>
+          </p>
+        </div>
+      </article>
+      <article class="card" aria-labelledby="title-customer-segmentation">
+        <img
+          class="card-screenshot"
+          src="/screenshots/customer-segmentation.png"
+          alt="Screenshot of the Customer Segmentation MCP App user interface (upstream project screenshot at the pinned revision)"
+          loading="lazy"
+          width="640"
+          height="400"
+        />
+        <div class="card-body">
+          <h3 id="title-customer-segmentation">Customer Segmentation</h3>
+          <p class="card-interaction">filtering + charts</p>
+          <p>Explore 250 synthetic customers by segment, revenue, engagement, and NPS with interactive filtering and charts.</p>
+          <p class="card-note">Deterministic seeded synthetic dataset; identical on every call and instance.</p>
+          <p class="card-prompt">
+            Try: <code>Let me explore customers by revenue and engagement.</code>
+          </p>
+          <p class="card-endpoint">
+            <span class="endpoint-label" id="endpoint-label-customer-segmentation">MCP endpoint</span>
+            <code class="endpoint-url" data-endpoint data-path="/apps/customer-segmentation/mcp">/apps/customer-segmentation/mcp</code>
+          </p>
+          <p class="card-actions">
+            <button
+              type="button"
+              class="copy-button"
+              data-path="/apps/customer-segmentation/mcp"
+              aria-describedby="endpoint-label-customer-segmentation"
+            >Copy MCP URL</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </p>
+          <p class="card-meta">
+            Source:
+            <a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/customer-segmentation-server">upstream customer-segmentation-server</a>
+            @ <code>10195ad91851</code>
+          </p>
+          <p class="card-meta">
+            Compatibility: production-verified 2026-08-17 · build
+            <code class="build-label" data-build-label>see <a href="/version">/version</a></code>
+          </p>
+        </div>
+      </article>
+      <article class="card" aria-labelledby="title-scenario-modeler">
+        <img
+          class="card-screenshot"
+          src="/screenshots/scenario-modeler.png"
+          alt="Screenshot of the SaaS Scenario Modeler MCP App user interface (upstream project screenshot at the pinned revision)"
+          loading="lazy"
+          width="640"
+          height="400"
+        />
+        <div class="card-body">
+          <h3 id="title-scenario-modeler">SaaS Scenario Modeler</h3>
+          <p class="card-interaction">scenario form + charts</p>
+          <p>Compare SaaS financial scenario templates and model custom 12-month projections with sliders and charts.</p>
+          <p class="card-note">Synthetic scenario templates computed on the server with clamped numeric inputs.</p>
+          <p class="card-prompt">
+            Try: <code>Compare a bootstrapped plan with a venture-funded growth plan.</code>
+          </p>
+          <p class="card-endpoint">
+            <span class="endpoint-label" id="endpoint-label-scenario-modeler">MCP endpoint</span>
+            <code class="endpoint-url" data-endpoint data-path="/apps/scenario-modeler/mcp">/apps/scenario-modeler/mcp</code>
+          </p>
+          <p class="card-actions">
+            <button
+              type="button"
+              class="copy-button"
+              data-path="/apps/scenario-modeler/mcp"
+              aria-describedby="endpoint-label-scenario-modeler"
+            >Copy MCP URL</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </p>
+          <p class="card-meta">
+            Source:
+            <a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/scenario-modeler-server">upstream scenario-modeler-server</a>
+            @ <code>10195ad91851</code>
+          </p>
+          <p class="card-meta">
+            Compatibility: production-verified 2026-08-17 · build
+            <code class="build-label" data-build-label>see <a href="/version">/version</a></code>
+          </p>
+        </div>
+      </article>
+      <article class="card" aria-labelledby="title-transcript">
+        <img
+          class="card-screenshot"
+          src="/screenshots/transcript.png"
+          alt="Screenshot of the Transcript MCP App user interface (upstream project screenshot at the pinned revision)"
+          loading="lazy"
+          width="640"
+          height="400"
+        />
+        <div class="card-body">
+          <h3 id="title-transcript">Transcript</h3>
+          <p class="card-interaction">media / speech</p>
+          <p>A live speech-transcription card built on the browser's Web Speech API, with copy-to-clipboard for the captured text.</p>
+          <p class="card-note">Speech recognition runs in your browser via the Web Speech API (the host asks for microphone permission); no audio or transcript reaches the gallery server.</p>
+          <p class="card-prompt">
+            Try: <code>Open a live speech transcription app I can dictate into.</code>
+          </p>
+          <p class="card-endpoint">
+            <span class="endpoint-label" id="endpoint-label-transcript">MCP endpoint</span>
+            <code class="endpoint-url" data-endpoint data-path="/apps/transcript/mcp">/apps/transcript/mcp</code>
+          </p>
+          <p class="card-actions">
+            <button
+              type="button"
+              class="copy-button"
+              data-path="/apps/transcript/mcp"
+              aria-describedby="endpoint-label-transcript"
+            >Copy MCP URL</button>
+            <span class="copy-status" role="status" aria-live="polite"></span>
+          </p>
+          <p class="card-meta">
+            Source:
+            <a href="https://github.com/modelcontextprotocol/ext-apps/tree/10195ad91851502134930e9b80ec2c04e277a720/examples/transcript-server">upstream transcript-server</a>
+            @ <code>10195ad91851</code>
+          </p>
+          <p class="card-meta">
+            Compatibility: production-verified 2026-08-17 · build
+            <code class="build-label" data-build-label>see <a href="/version">/version</a></code>
+          </p>
+        </div>
+      </article>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>
+      Gallery code: Apache-2.0. Upstream example code: MIT (see
+      <a href="https://github.com/modelcontextprotocol/ext-apps/blob/10195ad91851502134930e9b80ec2c04e277a720/LICENSE">upstream license</a>).
+      Machine-readable manifest: <a href="/apps.json"><code>/apps.json</code></a>.
+    </p>
+    <p>
+      No cookies, no analytics, no tracking. Requests are logged only as
+      anonymous aggregate metadata (app, method category, status, duration,
+      byte counts).
+    </p>
+  </footer>
+  <script src="/assets/copy-url.b4263b41b6a1.js"></script>
+</body>
+</html>

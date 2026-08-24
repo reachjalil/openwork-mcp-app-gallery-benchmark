@@ -1,0 +1,9 @@
+node_modules
+.vercel
+generated
+public
+upstream
+coverage
+playwright-report
+test-results
+pnpm-lock.yaml

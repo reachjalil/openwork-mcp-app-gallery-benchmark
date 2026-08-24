@@ -70,10 +70,66 @@ bypassed, or closed.
 | FABLE | `forward` | `monorepo-import-fable-2026-08-21` | `2d8547d1b0e1d962c8d799d1b509d889dc96ef08` | Passed |
 | GROK | `grok/gallery-v1` | `monorepo-import-grok-2026-08-21` | `6c0e6bab7eb579da5eee0a8e2cc9de2f57b855c4` | Incomplete |
 
-GROK smallest source check on the exact import head: `pnpm install --frozen-lockfile` and `pnpm run typecheck` passed with Node v24.18.0 and pnpm 10.28.0. Full `pnpm release:check` was started from that same head and is recorded in later sections when it finishes.
+GROK source-head checks on `6c0e6bab7eb579da5eee0a8e2cc9de2f57b855c4` with
+Node v24.18.0 and pnpm 10.28.0:
 
-## Later phases
+- `pnpm install --frozen-lockfile` and `pnpm run typecheck`: Passed
+- `pnpm run release:check`: Passed in 14,938 ms
 
-Filled as execution continues: monorepo creation, subtree import, CI and
-comparison documents, migration PR, Vercel takeover, production release, and
-source archival.
+## Phase 4 — Create the monorepo and import histories
+
+- Local path: `/Users/jalillaaraichi/openwork-mcp-app-gallery-benchmark`
+- GitHub: https://github.com/reachjalil/openwork-mcp-app-gallery-benchmark
+- Visibility: public
+- Bootstrap `main` / initial `dev`: `e6a15ce397767373e94098f3f2182d44f431e9ba`
+- Default branch: `dev`
+- No `forward` branch
+- Subtree merges: SOL `16a4e091…`, FABLE `ff2be54d…`, GROK `1ee0a2bc…`
+- Tree equivalence before later edits: SOL 132, FABLE 168, GROK 157 files
+
+## Phase 5 and 6 — Operable monorepo, evidence, and scoring
+
+Root CI, comparison scripts, and assessment documents added on
+`migration/consolidate-gallery-candidates`. Local `ci:check` from each
+implementation prefix passed on 2026-08-21. Original-benchmark normalized
+scores: SOL 86.25, FABLE 91.25, GROK 72.50. Original verdicts unchanged.
+
+## Phase 7 — Migration PR merged into `dev`
+
+- PR: https://github.com/reachjalil/openwork-mcp-app-gallery-benchmark/pull/1
+- Exact head: `d4efd2ea4869950e9a92adc9583ce46b09668153`
+- Merge commit / current `dev`: `f461e615cd0f47d7a9a091a2179eb7564cf5efa8`
+- Required checks on that head: `sol`, `fable`, `grok`, `comparison`, `compare`, `analyze`, and GHAS `CodeQL` all Passed
+- Merge method: normal merge commit, not squash
+- `main` remains bootstrap `e6a15ce397767373e94098f3f2182d44f431e9ba`
+- No monorepo `forward` branch
+- Historical GROK PR #1 remains OPEN at `6c0e6bab7eb579da5eee0a8e2cc9de2f57b855c4`
+- Stable origins still returned HTTP 200 on `/healthz` after the GitHub merge
+
+Repository rulesets added: `dev-protection` (no force-push/delete) and
+`main-protection` (no force-push/delete; pull request required).
+
+## Checkpoint — stopping for Vercel takeover
+
+CLI cannot transfer FABLE/GROK out of Different AI or grant the Vercel
+GitHub App access to the new repository. Production Git sources and Root
+Directories are still the old single-repo `.` layout. Do not treat the
+takeover as complete until Jalil confirms and the agent reinspects live
+Vercel configuration.
+
+## Product change — one canonical gallery
+
+Jalil superseded the three-project deploy on 2026-08-21: assess SOL, FABLE,
+and GROK; keep those trees as references; deploy only a new
+`implementations/gallery` composed from the best of the three.
+
+Local work is on `feature/canonical-gallery`. Local `pnpm run ci:check` in
+`implementations/gallery` Passed on 2026-08-21 (Node v24.18.0, pnpm 10.28.0):
+96 unit/gateway/contract tests and 15 browser tests. Selection notes:
+`docs/assessment/canonical-selection.md` and
+`implementations/gallery/SELECTION.md`.
+
+Do not remap the three historical Vercel projects onto this monorepo. After
+the canonical gallery is committed, proven, and connected as one Vercel
+project, Jalil can close the three old Vercel projects and archive the three
+old GitHub source repos. Those cleanup steps are not done here.

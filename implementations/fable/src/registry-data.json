@@ -1,0 +1,144 @@
+{
+  "upstreamRepository": "https://github.com/modelcontextprotocol/ext-apps",
+  "upstreamCommit": "10195ad91851502134930e9b80ec2c04e277a720",
+  "apps": [
+    {
+      "slug": "get-time",
+      "displayName": "Get Time",
+      "serverName": "Basic MCP App Server (React)",
+      "serverVersion": "1.0.0",
+      "summary": "The smallest complete MCP App: an interactive card that shows the current server time with a UI-triggered refresh.",
+      "interaction": "starter",
+      "toolName": "get-time",
+      "resourceUri": "ui://get-time/mcp-app.html",
+      "samplePrompt": "Show me the current server time using the interactive app.",
+      "dataNote": "Live server clock only; no external data and no stored state.",
+      "upstreamDir": "basic-server-react",
+      "framework": "react",
+      "limits": {
+        "requestBytes": 262144,
+        "resultBytes": 524288,
+        "timeoutMs": 15000,
+        "concurrentRequests": 8
+      },
+      "egressOrigins": [],
+      "enabledByDefault": true,
+      "compatibility": "production-verified 2026-08-17"
+    },
+    {
+      "slug": "budget-allocator",
+      "displayName": "Budget Allocator",
+      "serverName": "Budget Allocator Server",
+      "serverVersion": "1.0.0",
+      "summary": "An editable startup budget with sliders, charts, historical trends, and stage benchmarks that recalculates as you adjust it.",
+      "interaction": "form + charts",
+      "toolName": "get-budget-data",
+      "resourceUri": "ui://budget-allocator/mcp-app.html",
+      "samplePrompt": "Create a $1 million seed-stage budget I can adjust interactively.",
+      "dataNote": "Synthetic demo data generated on the server; nothing is persisted.",
+      "upstreamDir": "budget-allocator-server",
+      "framework": "vanilla",
+      "limits": {
+        "requestBytes": 262144,
+        "resultBytes": 524288,
+        "timeoutMs": 15000,
+        "concurrentRequests": 8
+      },
+      "egressOrigins": [],
+      "enabledByDefault": true,
+      "compatibility": "production-verified 2026-08-17"
+    },
+    {
+      "slug": "cohort-heatmap",
+      "displayName": "Cohort Heatmap",
+      "serverName": "Cohort Heatmap Server",
+      "serverVersion": "1.0.0",
+      "summary": "A dense interactive customer-retention heatmap over synthetic monthly cohorts with metric and period controls.",
+      "interaction": "data visualization",
+      "toolName": "get-cohort-data",
+      "resourceUri": "ui://get-cohort-data/mcp-app.html",
+      "samplePrompt": "Show me an interactive customer-retention cohort heatmap.",
+      "dataNote": "Synthetic demo data regenerated per request; bounded cohort and period counts.",
+      "upstreamDir": "cohort-heatmap-server",
+      "framework": "react",
+      "limits": {
+        "requestBytes": 262144,
+        "resultBytes": 524288,
+        "timeoutMs": 15000,
+        "concurrentRequests": 8
+      },
+      "egressOrigins": [],
+      "enabledByDefault": true,
+      "compatibility": "production-verified 2026-08-17"
+    },
+    {
+      "slug": "customer-segmentation",
+      "displayName": "Customer Segmentation",
+      "serverName": "Customer Segmentation Server",
+      "serverVersion": "1.0.0",
+      "summary": "Explore 250 synthetic customers by segment, revenue, engagement, and NPS with interactive filtering and charts.",
+      "interaction": "filtering + charts",
+      "toolName": "get-customer-data",
+      "resourceUri": "ui://customer-segmentation/mcp-app.html",
+      "samplePrompt": "Let me explore customers by revenue and engagement.",
+      "dataNote": "Deterministic seeded synthetic dataset; identical on every call and instance.",
+      "upstreamDir": "customer-segmentation-server",
+      "framework": "vanilla",
+      "limits": {
+        "requestBytes": 262144,
+        "resultBytes": 524288,
+        "timeoutMs": 15000,
+        "concurrentRequests": 8
+      },
+      "egressOrigins": [],
+      "enabledByDefault": true,
+      "compatibility": "production-verified 2026-08-17"
+    },
+    {
+      "slug": "scenario-modeler",
+      "displayName": "SaaS Scenario Modeler",
+      "serverName": "SaaS Scenario Modeler",
+      "serverVersion": "1.0.0",
+      "summary": "Compare SaaS financial scenario templates and model custom 12-month projections with sliders and charts.",
+      "interaction": "scenario form + charts",
+      "toolName": "get-scenario-data",
+      "resourceUri": "ui://scenario-modeler/mcp-app.html",
+      "samplePrompt": "Compare a bootstrapped plan with a venture-funded growth plan.",
+      "dataNote": "Synthetic scenario templates computed on the server with clamped numeric inputs.",
+      "upstreamDir": "scenario-modeler-server",
+      "framework": "react",
+      "limits": {
+        "requestBytes": 262144,
+        "resultBytes": 524288,
+        "timeoutMs": 15000,
+        "concurrentRequests": 8
+      },
+      "egressOrigins": [],
+      "enabledByDefault": true,
+      "compatibility": "production-verified 2026-08-17"
+    },
+    {
+      "slug": "transcript",
+      "displayName": "Transcript",
+      "serverName": "Transcript Server",
+      "serverVersion": "1.0.0",
+      "summary": "A live speech-transcription card built on the browser's Web Speech API, with copy-to-clipboard for the captured text.",
+      "interaction": "media / speech",
+      "toolName": "transcribe",
+      "resourceUri": "ui://transcript/mcp-app.html",
+      "samplePrompt": "Open a live speech transcription app I can dictate into.",
+      "dataNote": "Speech recognition runs in your browser via the Web Speech API (the host asks for microphone permission); no audio or transcript reaches the gallery server.",
+      "upstreamDir": "transcript-server",
+      "framework": "vanilla",
+      "limits": {
+        "requestBytes": 262144,
+        "resultBytes": 524288,
+        "timeoutMs": 15000,
+        "concurrentRequests": 8
+      },
+      "egressOrigins": [],
+      "enabledByDefault": true,
+      "compatibility": "production-verified 2026-08-17"
+    }
+  ]
+}

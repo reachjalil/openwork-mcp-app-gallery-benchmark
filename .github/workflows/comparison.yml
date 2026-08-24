@@ -1,0 +1,28 @@
+name: Comparison
+
+on:
+  pull_request:
+  push:
+    branches: [dev, main]
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node scripts/benchmark/validate-results.mjs
+      - run: node scripts/benchmark/build-comparison.mjs
+      - run: node scripts/benchmark/build-scorecard.mjs
+      - run: node scripts/benchmark/verify-source-manifest.mjs
+      - name: Fail when generated files drift
+        run: git diff --exit-code -- benchmark/combined-result.json docs/assessment/scorecard.md

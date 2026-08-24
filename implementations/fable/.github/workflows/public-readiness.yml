@@ -1,0 +1,40 @@
+name: Public readiness
+
+# Evidence workflow for the private-to-public visibility gate: provenance and
+# notices, source boundary, secret-pattern scan over the full history head,
+# and the architecture invariant. Runs on demand and on pull requests.
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run verify:notices
+      - run: pnpm run check:source-boundary
+      - run: pnpm run build:vercel
+      - run: pnpm run check:vercel
+      - name: Secret pattern scan (tracked files)
+        run: |
+          set -eu
+          PATTERNS='AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|gh[pousr]_[A-Za-z0-9]{20,}|xox[baprs]-[A-Za-z0-9-]{10,}|sk-[A-Za-z0-9]{20,}'
+          if git grep -nIE "$PATTERNS" -- ':!pnpm-lock.yaml' ':!.github/workflows/public-readiness.yml'; then
+            echo "secret-like pattern found in tracked files" >&2
+            exit 1
+          fi
+          echo "no secret-like patterns in tracked files"

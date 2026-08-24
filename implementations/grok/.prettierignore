@@ -1,0 +1,8 @@
+upstream/**
+generated/**
+public/**
+pnpm-lock.yaml
+LICENSE
+playwright-report/**
+test-results/**
+coverage/**

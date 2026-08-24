@@ -1,0 +1,23 @@
+{
+  "name": "openwork-mcp-app-gallery-benchmark",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal monorepo for the hosted MCP Apps gallery and the SOL, FABLE, and GROK reference implementations.",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "check:gallery": "pnpm --dir implementations/gallery run ci:check",
+    "check:sol": "pnpm --dir implementations/sol run ci:check",
+    "check:fable": "pnpm --dir implementations/fable run ci:check",
+    "check:grok": "pnpm --dir implementations/grok run ci:check",
+    "check:all": "pnpm run check:gallery && pnpm run check:sol && pnpm run check:fable && pnpm run check:grok",
+    "benchmark:validate": "node scripts/benchmark/validate-results.mjs",
+    "benchmark:compare": "node scripts/benchmark/build-comparison.mjs",
+    "benchmark:score": "node scripts/benchmark/build-scorecard.mjs",
+    "benchmark:manifest": "node scripts/benchmark/verify-source-manifest.mjs"
+  }
+}

@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [forward]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run format:check
+      - run: pnpm run lint
+      - run: pnpm run typecheck
+      - run: pnpm run verify:notices
+      - run: pnpm run check:source-boundary
+      - run: pnpm run audit:ci
+      - run: pnpm run test
+      - run: pnpm run build:vercel
+      - run: pnpm run check:vercel
+      - run: pnpm run sbom
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm run test:browser
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: build-and-sbom
+          path: |
+            generated/apps.json
+            generated/sbom.cdx.json
+          retention-days: 30
