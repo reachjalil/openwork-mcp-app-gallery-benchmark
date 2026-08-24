@@ -1,15 +1,18 @@
 # MCP Apps gallery benchmark monorepo
 
-This repository is the personal comparison home for three independently
-hosted MCP Apps gallery implementations: SOL, FABLE, and GROK.
+This repository is the personal home for the hosted MCP Apps gallery and the
+three August 17 benchmark references: SOL, FABLE, and GROK.
 
 ## Boundaries
 
 - Work only in this repository. Do not modify OpenWork, OpenWork Snacks, or
   OpenWork Lounge from here.
+- `implementations/gallery` is the active deployable gallery. New product
+  work goes there.
 - Keep SOL, FABLE, and GROK independent under
-  `implementations/{sol,fable,grok}`. Do not consolidate their runtime code,
-  lockfiles, or dependencies.
+  `implementations/{sol,fable,grok}` as historical references. Do not
+  consolidate their runtime code, lockfiles, or dependencies, and do not
+  overwrite them with the canonical gallery.
 - Preserve original `TIMELINE.md`, `BENCHMARK_REPORT.md`, and
   `benchmark/{result,timeline}.json` files. Do not rewrite them to hide
   defects, gaps, or the original GROK `Incomplete` verdict.
@@ -24,16 +27,15 @@ hosted MCP Apps gallery implementations: SOL, FABLE, and GROK.
 
 - `dev` is the default integration branch. Ordinary pull requests target
   `dev`. Vercel Preview deployments come from `dev`.
-- `main` is production-only. Vercel Production Branch is `main` for all three
-  projects.
+- `main` is production-only. Vercel Production Branch is `main`.
 - Do not create or use a `forward` branch in this monorepo.
 
 ## Runtime
 
 - Node.js 24.x and pnpm 10.28.0.
 - Run candidate commands with that implementation as the working directory, or
-  through the root orchestration scripts (`check:sol`, `check:fable`,
-  `check:grok`, `check:all`).
+  through the root orchestration scripts (`check:gallery`, `check:sol`,
+  `check:fable`, `check:grok`, `check:all`).
 - There is no root pnpm workspace. Each implementation keeps its own
   `package.json` and lockfile.
 

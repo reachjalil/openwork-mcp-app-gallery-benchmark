@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Green is not the same as merged</title>
+  <desc id="desc">Three aligned release lanes. Fable and Sol proceed from build to green pull request, merge, post-merge CI, and production aligned to the merged SHA. Grok reaches a green pull request, stops at a blocked merge gate, has no post-merge CI, and production serves the pull-request head rather than a merged release SHA.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070B16"/>
+      <stop offset="1" stop-color="#111A2F"/>
+    </linearGradient>
+    <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="laneArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#53617C"/>
+    </marker>
+    <marker id="branchArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#FF766A"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1460" cy="70" r="340" fill="#F05264" opacity="0.06"/>
+  <text x="100" y="105" fill="#91A4C9" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="26" font-weight="700" letter-spacing="4">TERMINAL DELIVERY</text>
+  <text x="100" y="174" fill="#F7F9FF" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="56" font-weight="800">Green is not the same as merged.</text>
+  <text x="100" y="219" fill="#AAB7D3" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="24">The finish line required a merged release SHA and proof after the merge.</text>
+
+  <g fill="#7888A7" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="19" text-anchor="middle">
+    <text x="300" y="292">BUILD</text>
+    <text x="575" y="292">PR HEAD GREEN</text>
+    <text x="850" y="292">MERGE</text>
+    <text x="1125" y="292">POST-MERGE CI</text>
+    <text x="1400" y="292">PRODUCTION SHA</text>
+  </g>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+    <text x="100" y="388" fill="#F7D57D" font-size="32" font-weight="800">Fable</text>
+    <text x="100" y="418" fill="#95A3BE" font-size="18">Passed</text>
+    <line x1="300" y1="395" x2="1400" y2="395" stroke="#53617C" stroke-width="4" marker-end="url(#laneArrow)"/>
+    <g fill="#F2BF55" filter="url(#nodeGlow)">
+      <circle cx="300" cy="395" r="17"/><circle cx="575" cy="395" r="17"/><circle cx="850" cy="395" r="17"/><circle cx="1125" cy="395" r="17"/><circle cx="1400" cy="395" r="17"/>
+    </g>
+    <g fill="#07101F" font-size="18" font-weight="900" text-anchor="middle">
+      <text x="300" y="402">✓</text><text x="575" y="402">✓</text><text x="850" y="402">✓</text><text x="1125" y="402">✓</text><text x="1400" y="402">✓</text>
+    </g>
+    <text x="1400" y="441" fill="#F2D17A" font-size="18" text-anchor="middle">Merged SHA served</text>
+
+    <text x="100" y="558" fill="#71D7F7" font-size="32" font-weight="800">Sol</text>
+    <text x="100" y="588" fill="#95A3BE" font-size="18">Passed</text>
+    <line x1="300" y1="565" x2="1400" y2="565" stroke="#53617C" stroke-width="4" marker-end="url(#laneArrow)"/>
+    <g fill="#4FC0E9" filter="url(#nodeGlow)">
+      <circle cx="300" cy="565" r="17"/><circle cx="575" cy="565" r="17"/><circle cx="850" cy="565" r="17"/><circle cx="1125" cy="565" r="17"/><circle cx="1400" cy="565" r="17"/>
+    </g>
+    <g fill="#07101F" font-size="18" font-weight="900" text-anchor="middle">
+      <text x="300" y="572">✓</text><text x="575" y="572">✓</text><text x="850" y="572">✓</text><text x="1125" y="572">✓</text><text x="1400" y="572">✓</text>
+    </g>
+    <text x="1400" y="611" fill="#83DDF7" font-size="18" text-anchor="middle">Merged SHA served</text>
+
+    <text x="100" y="728" fill="#FF8D83" font-size="32" font-weight="800">Grok</text>
+    <text x="100" y="758" fill="#95A3BE" font-size="18">Incomplete</text>
+    <line x1="300" y1="735" x2="830" y2="735" stroke="#53617C" stroke-width="4"/>
+    <circle cx="300" cy="735" r="17" fill="#FF766A" filter="url(#nodeGlow)"/>
+    <circle cx="575" cy="735" r="17" fill="#FF766A" filter="url(#nodeGlow)"/>
+    <g fill="#07101F" font-size="18" font-weight="900" text-anchor="middle"><text x="300" y="742">✓</text><text x="575" y="742">✓</text></g>
+    <rect x="827" y="702" width="46" height="66" rx="11" fill="#3A1721" stroke="#FF766A" stroke-width="4"/>
+    <path d="M840 734 H860 M850 724 V744" stroke="#FF766A" stroke-width="4"/>
+    <text x="850" y="793" fill="#FF948B" font-size="18" font-weight="800" text-anchor="middle">BLOCKED</text>
+    <line x1="895" y1="735" x2="1125" y2="735" stroke="#4A5368" stroke-width="3" stroke-dasharray="10 10"/>
+    <circle cx="1125" cy="735" r="16" fill="#20283A" stroke="#5C667C" stroke-width="3"/>
+    <text x="1125" y="793" fill="#7E8BA6" font-size="18" text-anchor="middle">Unavailable</text>
+    <path d="M575 755 C760 850, 1120 850, 1382 760" fill="none" stroke="#FF766A" stroke-width="4" stroke-dasharray="12 9" marker-end="url(#branchArrow)"/>
+    <circle cx="1400" cy="735" r="18" fill="#3A1721" stroke="#FF766A" stroke-width="4"/>
+    <text x="1400" y="742" fill="#FF9A91" font-size="18" font-weight="900" text-anchor="middle">≠</text>
+    <text x="1400" y="793" fill="#FF948B" font-size="18" text-anchor="middle">PR head served</text>
+  </g>
+
+  <line x1="100" y1="836" x2="1500" y2="836" stroke="#2B3650"/>
+  <text x="100" y="875" fill="#8D9AB4" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="19">Grok's product ran publicly, but the required release-branch merge and post-merge proof never existed.</text>
+</svg>

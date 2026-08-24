@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        candidate: [sol, fable, grok]
+        candidate: [gallery, sol, fable, grok]
     defaults:
       run:
         working-directory: implementations/${{ matrix.candidate }}

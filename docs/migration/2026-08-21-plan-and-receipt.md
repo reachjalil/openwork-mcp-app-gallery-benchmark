@@ -116,3 +116,20 @@ GitHub App access to the new repository. Production Git sources and Root
 Directories are still the old single-repo `.` layout. Do not treat the
 takeover as complete until Jalil confirms and the agent reinspects live
 Vercel configuration.
+
+## Product change — one canonical gallery
+
+Jalil superseded the three-project deploy on 2026-08-21: assess SOL, FABLE,
+and GROK; keep those trees as references; deploy only a new
+`implementations/gallery` composed from the best of the three.
+
+Local work is on `feature/canonical-gallery`. Local `pnpm run ci:check` in
+`implementations/gallery` Passed on 2026-08-21 (Node v24.18.0, pnpm 10.28.0):
+96 unit/gateway/contract tests and 15 browser tests. Selection notes:
+`docs/assessment/canonical-selection.md` and
+`implementations/gallery/SELECTION.md`.
+
+Do not remap the three historical Vercel projects onto this monorepo. After
+the canonical gallery is committed, proven, and connected as one Vercel
+project, Jalil can close the three old Vercel projects and archive the three
+old GitHub source repos. Those cleanup steps are not done here.
