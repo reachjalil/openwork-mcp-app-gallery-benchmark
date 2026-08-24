@@ -1,48 +1,29 @@
-# MCP Apps gallery benchmark monorepo
+# Agent contract
 
-This repository is the personal home for the hosted MCP Apps gallery and the
-three August 17 benchmark references: SOL, FABLE, and GROK.
-
-## Boundaries
-
-- Work only in this repository. Do not modify OpenWork, OpenWork Snacks, or
-  OpenWork Lounge from here.
-- `implementations/gallery` is the active deployable gallery. New product
-  work goes there.
-- Keep SOL, FABLE, and GROK independent under
-  `implementations/{sol,fable,grok}` as historical references. Do not
-  consolidate their runtime code, lockfiles, or dependencies, and do not
-  overwrite them with the canonical gallery.
-- Preserve original `TIMELINE.md`, `BENCHMARK_REPORT.md`, and
-  `benchmark/{result,timeline}.json` files. Do not rewrite them to hide
-  defects, gaps, or the original GROK `Incomplete` verdict.
-- Nested `implementations/*/.github` files are imported history. Only root
-  `.github/workflows` are live.
-- Never commit `.vercel/`, tokens, cookies, environment values, project IDs,
-  protected Preview URLs, or raw provider logs.
-- Do not add paid Vercel or GitHub features, custom domains, or public
-  announcements from this repository.
-
-## Branches
-
-- `dev` is the default integration branch. Ordinary pull requests target
-  `dev`. Vercel Preview deployments come from `dev`.
-- `main` is production-only. Vercel Production Branch is `main`.
-- Do not create or use a `forward` branch in this monorepo.
-
-## Runtime
-
-- Node.js 24.x and pnpm 10.28.0.
-- Run candidate commands with that implementation as the working directory, or
-  through the root orchestration scripts (`check:gallery`, `check:sol`,
-  `check:fable`, `check:grok`, `check:all`).
-- There is no root pnpm workspace. Each implementation keeps its own
-  `package.json` and lockfile.
-
-## Evidence
-
-- Original August 17 benchmark verdicts stay visible beside any later
-  post-migration scores.
-- Every score must cite a reproducible evidence path. If a measurement cannot
-  be performed, mark it unavailable or incomplete.
-- Import provenance lives in `docs/migration/`.
+- The repository root IS the hosted MCP Apps gallery (the deployable
+  product), composed from the August 17 SOL, FABLE, and GROK candidates.
+  Those three trees stay frozen references under `reference/{sol,fable,grok}`
+  with the benchmark evidence in `reference/docs`; they receive no feature
+  work.
+- Pull requests target `dev`; `main` is production-only. The customer-facing
+  guide is `docs/building-mcp-apps.md` — keep it accurate when changing the
+  registry, adapter, or deployment shape.
+- Node 24.x + pnpm 10.28.0 (`corepack enable && pnpm install --frozen-lockfile`).
+- Run `pnpm release:check` before publishing a PR; it is the complete local
+  release gate. Browser tests need `pnpm exec playwright install chromium`.
+- Runtime dependencies are pinned exactly (mcp-handler 2.1.1,
+  @modelcontextprotocol/server 2.0.0, hono, zod) and enforced by
+  `scripts/check-vercel-architecture.mjs`. MCP SDK v1 and
+  `@modelcontextprotocol/ext-apps` are dev/test-only.
+- Upstream example code under `upstream/ext-apps/` is pinned to one reviewed
+  commit. Never fetch upstream at build or runtime. Any change to a copied
+  file must update `upstream/manifest.json` (digests + modification note) and
+  pass `pnpm verify:notices`.
+- Wave 1 safety boundary is mandatory: no server egress, no subprocesses, no
+  persistence, no credentials, no write tools, bounded input/output/time/
+  concurrency. `scripts/check-source-boundary.mjs` scans the runtime path.
+- Never log tool arguments, results, prompts, resource contents, headers,
+  cookies, IP addresses, or credentials. `src/observability.ts` is the only
+  logging seam.
+- Do not add a root `/mcp` endpoint: every app stays its own logical MCP
+  server under `/apps/<slug>/mcp`.

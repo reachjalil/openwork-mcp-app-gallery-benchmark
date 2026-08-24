@@ -1,0 +1,167 @@
+{
+  "period": "original-benchmark-2026-08-17",
+  "rubric": {
+    "path": "docs/assessment/rubric.md",
+    "categories": {
+      "terminalDelivery": {
+        "title": "Terminal delivery completeness",
+        "weight": 20
+      },
+      "protocolCorrectness": {
+        "title": "Protocol and functional correctness",
+        "weight": 20
+      },
+      "securityReadiness": {
+        "title": "Security and public readiness",
+        "weight": 15
+      },
+      "deploymentReliability": {
+        "title": "Deployment and reliability",
+        "weight": 15
+      },
+      "hostInteroperability": {
+        "title": "Host interoperability",
+        "weight": 10
+      },
+      "maintainability": {
+        "title": "Maintainability and implementation quality",
+        "weight": 10
+      },
+      "executionEfficiency": {
+        "title": "Execution efficiency",
+        "weight": 10
+      }
+    }
+  },
+  "candidates": {
+    "sol": {
+      "modelName": "SOL",
+      "originalVerdict": "Passed",
+      "eligibility": "Eligible original benchmark candidate; merged and proven on stable origin",
+      "expectedNormalizedTotal": 86.25,
+      "categories": {
+        "terminalDelivery": {
+          "level": 4,
+          "evidencePath": "reference/sol/benchmark/result.json#finalVerdict",
+          "rationale": "Original verdict Passed. PRs #1 and #2 merged to forward. Stable origin and completed report exist."
+        },
+        "protocolCorrectness": {
+          "level": 4,
+          "evidencePath": "reference/sol/benchmark/result.json#currentProtocolState",
+          "rationale": "Current and legacy protocol matrices passed for all six apps on local, Preview, staged, and stable Production."
+        },
+        "securityReadiness": {
+          "level": 3,
+          "evidencePath": "reference/sol/benchmark/result.json#securityState",
+          "rationale": "Shipped artifact security passed, but native GitHub dependency review remained Incomplete and paid WAF was skipped."
+        },
+        "deploymentReliability": {
+          "level": 4,
+          "evidencePath": "reference/sol/benchmark/result.json#productionDeployment",
+          "rationale": "Exact Preview, staged Production, 1,261-second observation, promotion without rebuild, and stable-origin proof passed. First-release rollback was skipped, not failed."
+        },
+        "hostInteroperability": {
+          "level": 2,
+          "evidencePath": "reference/sol/benchmark/result.json#openworkCompatibilityState",
+          "rationale": "Installed OpenWork matrix and independent-host proof were both explicitly Incomplete."
+        },
+        "maintainability": {
+          "level": 3,
+          "evidencePath": "reference/sol/benchmark/result.json#selfIntroducedRegressionCount",
+          "rationale": "Architecture and deterministic build are documented, but 12 self-introduced regressions were required before the passing artifact."
+        },
+        "executionEfficiency": {
+          "level": 3,
+          "evidencePath": "reference/sol/benchmark/result.json#totalElapsedMs",
+          "rationale": "Completed inside the window (10,265,000 ms elapsed, 7,861,451 ms active) with 1,209,000 ms rework. Not exact-efficiency proof."
+        }
+      }
+    },
+    "fable": {
+      "modelName": "FABLE",
+      "originalVerdict": "Passed",
+      "eligibility": "Eligible original benchmark candidate; merged and proven on stable origin",
+      "expectedNormalizedTotal": 91.25,
+      "categories": {
+        "terminalDelivery": {
+          "level": 4,
+          "evidencePath": "reference/fable/benchmark/result.json#finalVerdict",
+          "rationale": "Original verdict Passed. PRs #1 and #2 merged to forward. Stable origin and completed report exist."
+        },
+        "protocolCorrectness": {
+          "level": 4,
+          "evidencePath": "reference/fable/benchmark/result.json#currentProtocolState",
+          "rationale": "Current and legacy Streamable HTTP contracts passed locally, on Preview, staged, and the stable origin, including 28/28 canaries."
+        },
+        "securityReadiness": {
+          "level": 3,
+          "evidencePath": "reference/fable/benchmark/result.json#securityState",
+          "rationale": "SecurityState Passed with notices, boundary, and live WAF verification, but one low-severity upstream CodeQL warning was retained and 24-hour observation remained deferred."
+        },
+        "deploymentReliability": {
+          "level": 4,
+          "evidencePath": "reference/fable/benchmark/result.json#productionUrl",
+          "rationale": "28/28 staged canaries, 252/252 observation samples, promotion without rebuild, and 28/28 stable-origin proof. First-release rollback was documented, not falsely claimed."
+        },
+        "hostInteroperability": {
+          "level": 3,
+          "evidencePath": "reference/fable/benchmark/result.json#openworkCompatibilityState",
+          "rationale": "OpenWork deep pair and restart journey passed. Independent host and four remaining in-host render checks stayed Incomplete under documented contention."
+        },
+        "maintainability": {
+          "level": 4,
+          "evidencePath": "reference/fable/BENCHMARK_REPORT.md",
+          "rationale": "96 unit/gateway/contract tests, 15 browser tests, architecture invariants, and 3/3 self-introduced regressions corrected."
+        },
+        "executionEfficiency": {
+          "level": 3,
+          "evidencePath": "reference/fable/benchmark/result.json#totalElapsedMs",
+          "rationale": "Completed (12,694,295 ms elapsed, 8,400,000 ms estimated active) with 3,300,000 ms rework. Core outcome passed with visible rework cost."
+        }
+      }
+    },
+    "grok": {
+      "modelName": "GROK",
+      "originalVerdict": "Incomplete",
+      "eligibility": "Original benchmark incomplete: PR #1 did not merge and production SHA is not a merged forward SHA",
+      "expectedNormalizedTotal": 72.5,
+      "categories": {
+        "terminalDelivery": {
+          "level": 2,
+          "evidencePath": "reference/grok/benchmark/result.json#finalVerdict",
+          "rationale": "Original verdict Incomplete. mergeMs is null. Production product SHA 78a52fd is not a merged forward SHA."
+        },
+        "protocolCorrectness": {
+          "level": 4,
+          "evidencePath": "reference/grok/benchmark/result.json#currentProtocolState",
+          "rationale": "Current and legacy protocol states are Passed on the implemented gallery."
+        },
+        "securityReadiness": {
+          "level": 3,
+          "evidencePath": "reference/grok/benchmark/result.json#securityState",
+          "rationale": "SecurityState Passed and PR-head CI/CodeQL/readiness were green, but post-merge security proof is explicitly Incomplete."
+        },
+        "deploymentReliability": {
+          "level": 3,
+          "evidencePath": "reference/grok/benchmark/result.json#promotedProductSha",
+          "rationale": "Preview, staged observation, promotion, and stable origin passed, but production SHA does not equal a merged forward SHA."
+        },
+        "hostInteroperability": {
+          "level": 3,
+          "evidencePath": "reference/grok/benchmark/result.json#independentHostState",
+          "rationale": "Independent host Passed via MCP Inspector. OpenWork deep path remained Incomplete."
+        },
+        "maintainability": {
+          "level": 3,
+          "evidencePath": "reference/grok/BENCHMARK_REPORT.md",
+          "rationale": "Clear isolated-app architecture and passing local gates, with a smaller browser matrix than FABLE (2 Playwright tests on the later source check)."
+        },
+        "executionEfficiency": {
+          "level": 2,
+          "evidencePath": "reference/grok/benchmark/result.json#totalElapsedMs",
+          "rationale": "Shortest recorded elapsed time (7,018,000 ms) cannot outweigh the incomplete merge and post-merge gates."
+        }
+      }
+    }
+  }
+}

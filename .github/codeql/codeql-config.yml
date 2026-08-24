@@ -1,6 +1,6 @@
-name: Gallery monorepo CodeQL
+name: Gallery CodeQL
 paths-ignore:
-  - implementations/gallery/upstream/**
-  - implementations/sol/upstream/**
-  - implementations/fable/upstream/**
-  - implementations/grok/upstream/**
+  - upstream/**
+  - reference/sol/upstream/**
+  - reference/fable/upstream/**
+  - reference/grok/upstream/**
