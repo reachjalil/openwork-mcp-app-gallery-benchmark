@@ -169,7 +169,48 @@ headers, all apps on both protocol eras, abuse cases):
 node scripts/deploy-canary.mjs --url https://your-deployment.vercel.app
 ```
 
-## 6. Going further
+## 6. Practical advice from building these
+
+Hard-won lessons that will save you time:
+
+- **Design the fallback first.** Write the tool as if no UI existed: a clear
+  text summary plus `structuredContent` with a typed schema. The UI then
+  becomes a progressive enhancement, hosts without MCP Apps stay useful, and
+  the model itself can reason over the structured result.
+- **One app = one server.** Resist merging many tools into one endpoint. A
+  mega-server pollutes the model's tool surface, invites name collisions, and
+  breaks the isolation hosts rely on. Path-route many small servers instead
+  (that's exactly what `src/gateway.ts` does).
+- **Send data, not conclusions.** The best-feeling apps (budget-allocator,
+  scenario-modeler) return a rich dataset once and do all interaction
+  client-side — instant sliders, no round trip per tweak. Reserve
+  `callServerTool` for actions that genuinely need the server.
+- **Make synthetic data deterministic.** Serverless hosting means any request
+  can hit a fresh instance. Seed your generators (see the seeded PRNG in
+  `upstream/ext-apps/customer-segmentation-server/src/data-generator.ts`)
+  instead of caching in module state — caches don't survive instance churn
+  and concurrent instances will disagree.
+- **Budget your bytes.** Single-file UIs get heavy fast — React plus the App
+  bridge lands around 550 KB before you add anything. Set a hard resource
+  ceiling in your pipeline (this repo fails the build over 1 MiB) and check
+  every result size at the gateway.
+- **Expect both protocol generations.** Most hosts today speak the 2025-era
+  stateless Streamable HTTP flow; the 2026-07-28 revision is arriving.
+  `mcp-handler` 2.x serves both from one registration — test both (see
+  `tests/contract/`).
+- **Test through a real host, not just JSON-RPC.** Protocol tests pass long
+  before rendering works. The browser suite here drives every app through the
+  official basic host against the live endpoint — that's what caught the
+  real bugs.
+- **Treat the host as the security boundary, and behave accordingly.** Your
+  iframe runs under the host's CSP with no ambient permissions. Declare any
+  external domains in `_meta.ui.csp`, request permissions (microphone etc.)
+  through resource metadata, and never assume you can reach the network.
+- **Version visibly.** A `/version` route exposing the deployed commit and
+  the pinned upstream revision turns "is it live yet?" and "what exactly is
+  running?" into one curl.
+
+## 7. Going further
 
 - Official examples and SDK: <https://github.com/modelcontextprotocol/ext-apps>
   (this repo pins commit `10195ad9…`; `pnpm run check:upstream` reports drift)
